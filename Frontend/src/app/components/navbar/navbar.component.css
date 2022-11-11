@@ -1,0 +1,12 @@
+.fa{
+    color: rgb(228, 226, 226);
+    padding-left: 2em;
+} 
+.roundImage{
+    border-radius: 50%;
+}
+.loginbutton:hover{
+    color: white;
+    border-color: red;
+    background-color: white;
+}
