@@ -1,1 +1,9 @@
-<p>promotedialog works!</p>
+<h2 mat-dialog-title>Are You Sure?</h2>
+<form (ngSubmit)="verify(user)" #promote="ngForm">
+    <mat-dialog-content>
+                <button class="btn btn-primary m-2"  type="submit" [mat-dialog-close]="true">Yes</button>
+                 <button class="btn btn-danger m-2"  [mat-dialog-close]="true">Cancel</button>
+            </mat-dialog-content>
+
+
+</form>

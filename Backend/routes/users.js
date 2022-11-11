@@ -6,6 +6,8 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const bcrypt = require('bcryptjs');
 
+
+
 //REGISTER
 router.post('/create', (req,res,next)=>{
     let newUser = new User({
@@ -42,7 +44,7 @@ router.get('/read',function(req,res){
 router.put('/updateuser',(req,res)=>{
 
     id=req.body._id,
-    role = req.body.role,
+    role = 'Librarian',
    User.findByIdAndUpdate({"_id":id},
                                 {$set:{"role":role}})
    .then(function(){
@@ -132,6 +134,16 @@ router.post('/authenticate', (req,res,next)=>{
         });
     });
 });
+
+//  Search User based on id
+router.get('/:id',  (req, res) => {
+      
+    User.findById(req.params.id)
+      .then((user)=>{
+          res.send(user);
+      });
+  })
+
 
 
 module.exports = router;

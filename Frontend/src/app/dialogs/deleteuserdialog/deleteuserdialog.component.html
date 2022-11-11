@@ -1,1 +1,6 @@
-<p>deleteuserdialog works!</p>
+<h2 mat-dialog-title class="title">Delete <strong>{{name}}</strong>?</h2>
+
+<mat-dialog-actions>
+    <button class="btn btn-light" [mat-dialog-close]="true">Cancel</button>
+    <button class="btn btn-danger" (click)="delete()" [mat-dialog-close]="true">Delete</button>
+</mat-dialog-actions>

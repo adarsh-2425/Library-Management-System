@@ -33,4 +33,22 @@ editUser(user:any){
   localStorage.setItem("editUserId", user._id.toString());
   this.router.navigate(['/edituser'])
 }
+
+promote(user:any){
+  localStorage.setItem('promoteuserid', user._id.toString())
+  let dialogRef = this.dialog.open(PromotedialogComponent);
+
+  dialogRef.afterClosed()
+  .subscribe(()=> this.ngOnInit());
+}
+
+deleteUser(user:any){
+  localStorage.setItem("deleteUserId", user._id.toString());
+  localStorage.setItem('deleteusername', user.Name.toString());
+  let dialogRef = this.dialog.open(DeleteuserdialogComponent)
+
+  dialogRef.afterClosed()
+  .subscribe(()=> this.ngOnInit());
+
+}
 }

@@ -14,9 +14,9 @@
                   <td>{{ user.Name}}</td>
                   <td>{{ user.role }}</td>
                   <td>
-                    <button class="btn btn-success custom-class"  style="cursor:pointer"   style="margin-left: 20px;">Approve as Librarian</button>
+                    <button class="btn btn-success custom-class"  style="cursor:pointer" (click)="promote(user)"  style="margin-left: 20px;">Approve as Librarian</button>
                     <button class="btn btn-info custom-class"  style="cursor:pointer" (click)="editUser(user)"  style="margin-left: 20px;">Edit User</button>
-                    <button class="btn btn-danger custom-class"  style="cursor:pointer"  >Delete User</button>
+                    <button class="btn btn-danger custom-class"  style="cursor:pointer" (click)="deleteUser(user)" >Delete User</button>
                 </tr>              
           </tbody>
           </table>
