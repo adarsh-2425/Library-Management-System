@@ -1,0 +1,25 @@
+<div class='card'>
+    <div class='card-body'>            
+      <div class='table-responsive'>
+        <table class='table'>
+          <thead class="head">
+            <tr>
+              <th>Name</th>
+              <th>Role</th>
+            </tr>
+           
+          </thead>
+          <tbody>
+              <tr *ngFor='let user of users'>              
+                  <td>{{ user.Name}}</td>
+                  <td>{{ user.role }}</td>
+                  <td>
+                    <button class="btn btn-success custom-class"  style="cursor:pointer"   style="margin-left: 20px;">Approve as Librarian</button>
+                    <button class="btn btn-info custom-class"  style="cursor:pointer" (click)="editUser(user)"  style="margin-left: 20px;">Edit User</button>
+                    <button class="btn btn-danger custom-class"  style="cursor:pointer"  >Delete User</button>
+                </tr>              
+          </tbody>
+          </table>
+          </div>
+          </div>
+          </div>

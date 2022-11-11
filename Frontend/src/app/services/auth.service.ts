@@ -57,6 +57,22 @@ export class AuthService {
     return !!localStorage.getItem('id_token')
   }
 
+   // checking if user is Admin
+   Admin(){
+    const role =  localStorage.getItem('role')
+    if('Admin' == role){
+      return true;
+    }
+  }
+
+  // checking if user is superAdmin
+    Librarian(){
+    const role =  localStorage.getItem('role')
+    if('Librarian' == role){
+      return true;
+    }
+  }
+
   logout(){
     localStorage.clear();
   }

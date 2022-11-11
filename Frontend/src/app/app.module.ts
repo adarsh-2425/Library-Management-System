@@ -23,9 +23,13 @@ import {MatChipsModule} from '@angular/material/chips';
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
 import { RegisterDialogComponent } from './dialogs/register-dialog/register-dialog.component';
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { LibrarianDashboardComponent } from './components/librarian-dashboard/librarian-dashboard.component';
 import { MemberDashboardComponent } from './components/member-dashboard/member-dashboard.component';
+import { ManageMemberComponent } from './components/Admin/manage-member/manage-member.component';
+import { DashboardAdminComponent } from './components/Admin/dashboard-admin/dashboard-admin.component';
+import { PromotedialogComponent } from './dialogs/promotedialog/promotedialog.component';
+import { DeleteuserdialogComponent } from './dialogs/deleteuserdialog/deleteuserdialog.component';
+import { EdituserComponent } from './components/edituser/edituser.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,9 +38,13 @@ import { MemberDashboardComponent } from './components/member-dashboard/member-d
     FooterComponent,
     HomeComponent,
     RegisterDialogComponent,
-    AdminDashboardComponent,
     LibrarianDashboardComponent,
-    MemberDashboardComponent
+    MemberDashboardComponent,
+    ManageMemberComponent,
+    DashboardAdminComponent,
+    PromotedialogComponent,
+    DeleteuserdialogComponent,
+    EdituserComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +69,9 @@ import { MemberDashboardComponent } from './components/member-dashboard/member-d
   providers: [
     ValidateService,
     AuthService,
-    RegisterDialogComponent
+    RegisterDialogComponent,
+    PromotedialogComponent,
+    DeleteuserdialogComponent
   ],
   bootstrap: [AppComponent]
 })

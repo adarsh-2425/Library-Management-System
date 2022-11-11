@@ -53,7 +53,6 @@ export class LoginComponent implements OnInit {
         if(data.success){
           this.AuthService.storeUserData(data.token, data.user, data.role, data.Name, data.id);
           this.toastr.success('Login Successful');
-         // console.log(JSON.parse(JSON.stringify(data.role)));
           const role = localStorage.getItem('role');
           console.log(role);
           
