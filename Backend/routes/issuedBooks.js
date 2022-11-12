@@ -2,6 +2,23 @@ const express = require('express');
 const router = express.Router();
 const IssuedBook = require('../models/issuedBook');
 
+//Count Documents
+router.get('/count',(req,res)=>{
+    memberName = 'Adarsh S';
+    var query = IssuedBook.find({'memberName':memberName});
+    query.count(function (err, count) {
+    if (err) console.log(err)
+    else
+    console.log("Count is", count)
+    if(count < 5){
+        res.json({success: true, msg: 'You can take book'});
+    }
+    else{
+        res.json({success: false, msg: 'Maximum Number of books taken'});
+    }
+});
+})
+
 //Take Book by Member
 router.post('/takebook', (req,res)=>{
     let newIssuedBook = new IssuedBook({
@@ -9,6 +26,8 @@ router.post('/takebook', (req,res)=>{
         memberName: req.body.memberName,
         memberEmail: req.body.memberEmail,
     });
+
+
     IssuedBook.addBook(newIssuedBook, (err,book)=>{
         if(err){
             res.json({success: false, msg: 'Failed to Take book'})

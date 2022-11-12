@@ -10,3 +10,6 @@ https://bobbyhadz.com/blog/typescript-not-all-code-paths-return-a-value
 
 ## Check that Field Exists with MongoDB
 https://stackoverflow.com/questions/19868016/check-that-field-exists-with-mongodb
+
+## Mongoose count() Function
+https://www.geeksforgeeks.org/mongoose-count-function/
