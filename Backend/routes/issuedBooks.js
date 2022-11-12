@@ -2,22 +2,7 @@ const express = require('express');
 const router = express.Router();
 const IssuedBook = require('../models/issuedBook');
 
-//Count Documents
-router.get('/count',(req,res)=>{
-    memberName = 'Adarsh S';
-    var query = IssuedBook.find({'memberName':memberName});
-    query.count(function (err, count) {
-    if (err) console.log(err)
-    else
-    console.log("Count is", count)
-    if(count < 5){
-        res.json({success: true, msg: 'You can take book'});
-    }
-    else{
-        res.json({success: false, msg: 'Maximum Number of books taken'});
-    }
-});
-})
+
 
 //Take Book by Member
 router.post('/takebook', (req,res)=>{
@@ -27,16 +12,31 @@ router.post('/takebook', (req,res)=>{
         memberEmail: req.body.memberEmail,
     });
 
+    //checking if member already took more than 5 books
+    memberName = newIssuedBook.memberName;
+    var query = IssuedBook.find({'memberName':memberName});
+    query.count(function (err, count) {
+    if (err) console.log(err)
+    else
+    if(count <= 5){
 
-    IssuedBook.addBook(newIssuedBook, (err,book)=>{
-        if(err){
-            res.json({success: false, msg: 'Failed to Take book'})
-        }
-        else{
-            res.json({success: true, msg: 'Book Submitted to Librarian. You will get an email when your book is issued. Thank You'})
-        }
-    })
+        //Submitting book to librarian
+        IssuedBook.addBook(newIssuedBook, (err,book)=>{
+            if(err){
+                res.json({success: false, msg: 'Failed to Take book'})
+            }
+            else{
+                res.json({success: true, msg: 'Book Submitted to Librarian. You will get an email when your book is issued. Thank You'})
+            }
+        })
+    }
+    else{
+        res.json({success: false, msg: 'Maximum Number of books taken'});
+    }
+});
 
+
+   
     //confirmation email logic
 
 });
