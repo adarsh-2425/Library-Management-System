@@ -16,7 +16,7 @@ router.post('/takebook', (req,res)=>{
     memberName = newIssuedBook.memberName;
     var query = IssuedBook.find({'memberName':memberName});
     query.count(function (err, count) {
-    if (err) console.log(err)
+    if (err) throw (err)
     else
     if(count <= 5){
 
@@ -69,6 +69,8 @@ router.put('/issuebook',(req,res)=>{
     //confirmation email logic
 });
 
+//LIBRARIAN ROUTES
+
 //Books waiting to be issued
 router.get('/waitingforissue', (req,res)=>{
     IssuedBook.find({"issued": { $ne: true}})
@@ -84,5 +86,35 @@ router.get('/issuedbooks', (req,res)=>{
         res.send(books)
     })
 });
+
+//MEMBER ROUTES
+
+//View the books submitted  by member
+router.get('/viewsubmittedbooks/:email', (req,res)=>{
+    memberEmail = req.params.email;
+    //in postman, http://localhost:3000/issuedbooks/viewbooks/adarsh.lol2425@gmail.com
+    IssuedBook.find({
+        'memberEmail': memberEmail,
+        'issued':{$ne: true}
+    })
+    .then((books)=>{
+        res.send(books)
+    })
+   
+});
+
+//View the books issued for member
+router.get('/viewissuedbooks/:email', (req,res)=>{
+    memberEmail = req.params.email;
+    IssuedBook.find({
+        'memberEmail': memberEmail,
+        'issued':{$ne: null}
+    })
+    .then((books)=>{
+        res.send(books)
+    })
+   
+});
+
 
 module.exports = router;    
