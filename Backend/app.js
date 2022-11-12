@@ -23,6 +23,8 @@ mongoose.connection.on('error',(err)=>{
 const app = express();
 
 const users = require('./routes/users');
+const books = require('./routes/books')
+const issuedBooks = require('./routes/issuedBooks');
 
 // CORS Middleware
 app.use(cors());
@@ -31,6 +33,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/users', users);
+app.use('/books', books);
+app.use('/issuedbooks', issuedBooks);
 
 // Set Static Folderr
 app.use(express.static(`./public`));
