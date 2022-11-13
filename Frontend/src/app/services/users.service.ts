@@ -30,12 +30,12 @@ export class UsersService {
   }
 
   // Edit user by user
-  editUserByUser(user:any)
-  {
-    console.log('User update')
-    return this.http.put(`${this.server_address}/users/update/`,user)
-    .subscribe(data =>{console.log(data)})
-  }
+  // editUserByUser(user:any)
+  // {
+  //   console.log('User update')
+  //   return this.http.put(`${this.server_address}/users/update/`,user)
+  //   .subscribe(data =>{console.log(data)})
+  // }
   // Delete User
   deleteUser(id:any){
     return this.http.delete(`${this.server_address}/users/delete/`+id)

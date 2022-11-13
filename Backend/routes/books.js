@@ -19,12 +19,21 @@ router.post('/create', (req,res)=>{
     })
 });
 
-//Read Book
+//Read All Book
 router.get('/read',(req,res)=>{
     Book.find()
     .then((books,err)=>{
         res.send(books);
         if(err) throw err;
+    })
+});
+
+//Read Individual Book By Email
+router.get('/readone/:email', (req,res)=>{
+    email = req.params.email;
+    Book.find({'email':email})
+    .then((books)=>{
+        res.send(books)
     })
 });
 
