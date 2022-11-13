@@ -1,1 +1,23 @@
-<p>viewbook works!</p>
+<div class="container">
+
+    <div class="row">
+        <!-- Contents -->
+        <div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="card" >
+          <div class="card-body">
+              <h1 class="card-title text-center">{{Books.title}}</h1>
+              <p><strong>{{Books.author}}</strong></p>
+              <p>About Book</p>
+          <img class="img-fluid l contentimage" [src]="Books.image" alt="Card image cap">
+          </div>
+          <div>
+            <form (ngSubmit)="takeBook(Books)">
+            <button type="submit" class="btn btn-success text-center">Take This Book</button>
+          </form>
+          </div>
+        </div>
+        
+      </div>
+  </div>
+  
+    </div> 

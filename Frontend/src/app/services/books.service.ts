@@ -14,8 +14,8 @@ export class BooksService {
     private router: Router
   ) { }
 
-    getBook(email:any){
-      return this.http.get(`${this.server_address}/readone`+email)
+    getBook(id:any){
+      return this.http.get(`${this.server_address}/readone/`+id)
     }
 
     // Read All Books

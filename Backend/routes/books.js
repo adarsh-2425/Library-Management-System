@@ -29,9 +29,9 @@ router.get('/read',(req,res)=>{
 });
 
 //Read Individual Book By Email
-router.get('/readone/:email', (req,res)=>{
-    email = req.params.email;
-    Book.find({'email':email})
+router.get('/readone/:id', (req,res)=>{
+    id = req.params.id;
+    Book.findOne({'id':id})
     .then((books)=>{
         res.send(books)
     })

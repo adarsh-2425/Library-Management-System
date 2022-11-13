@@ -3,6 +3,13 @@ const router = express.Router();
 const IssuedBook = require('../models/issuedBook');
 
 
+//View all books
+router.get('/read',(req,res)=>{
+    IssuedBook.find()
+    .then((data)=>{
+        res.send(data)
+    })
+});
 
 //Take Book by Member
 router.post('/takebook', (req,res)=>{
@@ -31,7 +38,7 @@ router.post('/takebook', (req,res)=>{
         })
     }
     else{
-        res.json({success: false, msg: 'Maximum Number of books taken'});
+        res.json({success: false, msg: 'Allotted Number of Books Taken. Contact Your Librarian'});
     }
 });
 
