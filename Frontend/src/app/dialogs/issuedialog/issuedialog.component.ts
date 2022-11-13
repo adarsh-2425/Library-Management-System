@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IssuedBooksService } from 'src/app/services/issued-books.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { MatDialog,MatDialogRef } from '@angular/material/dialog';
 
 
 @Component({
@@ -23,7 +24,8 @@ export class IssuedialogComponent implements OnInit {
   constructor(
     private IssuedBooksService: IssuedBooksService,
     private toastr: ToastrService,
-    private router: Router
+    private router: Router,
+    private dialogRef: MatDialogRef<IssuedialogComponent>
   ) { }
 
   ngOnInit(): void {
@@ -32,9 +34,7 @@ export class IssuedialogComponent implements OnInit {
   issueBook(){
     this.IssuedBooksService.issueBook(this.item)
     this.toastr.success('Book Issued')
+    this.dialogRef.close();
   }
 
-
-
-//this.dialogRef.close(); 
 }

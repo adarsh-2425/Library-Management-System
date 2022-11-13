@@ -12,18 +12,29 @@ export class IssuedBooksService {
     private http: HttpClient
   ) { }
 
+    //MEMBER SERVICES
+
     //Take book by member
     takeBook(book:any){
       return this.http.post<any>(`${this.server_address}/takebook`, book)
     }
+
+    //View the books submitted  by member
+    SubmittedBooksMember(email:any){
+      this.http.get(`${this.server_address}/viewsubmittedbooks/`+email)
+    }
+
+    IssuedBooksMember(email:any){
+      this.http.get(`${this.server_address}/viewissuedbooks/`+email)
+    }
+
+    //LIBRARIAN SERVICES
 
     //Issue Book By Librarian
     issueBook(item:any){
       return this.http.put(`${this.server_address}/issuebook`, item)
       .subscribe(data =>{console.log(data)})
     }
-
-    //LIBRARIAN SERVICES
 
     //Books waiting to be issued
     waitingForIssue(){
@@ -35,15 +46,10 @@ export class IssuedBooksService {
       return this.http.get(`${this.server_address}/issued`)
     }
 
-    //MEMBER SERVICES
-
-    //View the books submitted  by member
-    viewSubmittedBooks(email:any){
-      this.http.get(`${this.server_address}/viewsubmittedbooks/`+email)
+    //Delete Returned Books from Issuedbooks DB
+    bookReturned(deleteId:any){
+      return this.http.delete(`${this.server_address}/delete/`+deleteId)
     }
 
-    viewIssuedBooks(email:any){
-      this.http.get(`${this.server_address}/viewissuedbooks/`+email)
-    }
-
+    
 }

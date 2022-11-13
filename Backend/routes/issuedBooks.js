@@ -11,6 +11,9 @@ router.get('/read',(req,res)=>{
     })
 });
 
+
+//MEMBER ROUTES
+
 //Take Book by Member
 router.post('/takebook', (req,res)=>{
     let newIssuedBook = new IssuedBook({
@@ -49,49 +52,6 @@ router.post('/takebook', (req,res)=>{
 
 });
 
-//Issue Book By Librarian
-router.put('/issuebook',(req,res)=>{
-    id = req.body._id,
-    memberEmail = req.body.memberEmail,
-    dueDate = req.body.dueDate,
-    issued = 'true',
-    remarks = req.body.remarks,
-
-    IssuedBook.findByIdAndUpdate({'_id':id},
-    {
-        '$set': {
-            'dueDate':dueDate,
-            'issued':issued,
-            'remarks':remarks
-        }
-    })
-    .then(()=>{
-        res.send();
-    });
-
-    //confirmation email logic
-});
-
-//LIBRARIAN ROUTES
-
-//Books waiting to be issued
-router.get('/waiting', (req,res)=>{
-    IssuedBook.find({"issued": { $ne: true}})
-    .then((books)=>{
-        res.send(books)
-    })
-});
-
-//Read All Issued Books
-router.get('/issued', (req,res)=>{
-    IssuedBook.find({"issued": { $ne: null}})
-    .then((books)=>{
-        res.send(books)
-    })
-});
-
-//MEMBER ROUTES
-
 //View the books submitted  by member
 router.get('/viewsubmittedbooks/:email', (req,res)=>{
     memberEmail = req.params.email;
@@ -117,6 +77,58 @@ router.get('/viewissuedbooks/:email', (req,res)=>{
         res.send(books)
     })
    
+});
+
+
+
+//LIBRARIAN ROUTES
+
+//Issue Book By Librarian
+router.put('/issuebook',(req,res)=>{
+    id = req.body._id,
+    memberEmail = req.body.memberEmail,
+    dueDate = req.body.dueDate,
+    issued = 'true',
+    remarks = req.body.remarks,
+
+    IssuedBook.findByIdAndUpdate({'_id':id},
+    {
+        '$set': {
+            'dueDate':dueDate,
+            'issued':issued,
+            'remarks':remarks
+        }
+    })
+    .then(()=>{
+        res.send();
+    });
+
+    //confirmation email logic
+});
+
+//Books waiting to be issued
+router.get('/waiting', (req,res)=>{
+    IssuedBook.find({"issued": { $ne: true}})
+    .then((books)=>{
+        res.send(books)
+    })
+});
+
+//Read All Issued Books
+router.get('/issued', (req,res)=>{
+    IssuedBook.find({"issued": { $ne: null}})
+    .then((books)=>{
+        res.send(books)
+    })
+});
+
+//Delete Returned Books from Issuedbooks DB
+router.delete('/delete/:id',(req,res)=>{
+    id = req.params.id;
+    IssuedBook.findByIdAndDelete({'_id':id})
+    .then(()=>{
+        res.send();
+    })
 });
 
 

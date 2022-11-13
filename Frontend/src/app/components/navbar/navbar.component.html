@@ -23,7 +23,7 @@
             <a class="nav-link " data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="books" *ngIf="authService.Librarian() || authService.Member()">Books</a>  
 
             <a class="nav-link " data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="Librarian/waitinglist" *ngIf="authService.Librarian()">Waiting List</a>  
-            <a class="nav-link " data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="librarianissuedbooks" *ngIf="authService.Librarian()">Issued Books</a>  
+            <a class="nav-link " data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="Librarian/issued" *ngIf="authService.Librarian()">Issued Books</a>  
 
             <a class="nav-link " data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="memberwaitinglist" *ngIf="authService.Member()">Waiting List</a>  
             <a class="nav-link " data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="memberwaitinglist" *ngIf="authService.Member()">Issued Books</a> 

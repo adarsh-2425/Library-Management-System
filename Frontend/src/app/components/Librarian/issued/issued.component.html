@@ -1,1 +1,39 @@
-<p>issued works!</p>
+<div class="container">
+    <div class='card'>
+        <div class='card-body'>            
+          <div class='table-responsive'>
+            <table class='table'>
+                  
+              <thead class="head">
+                <tr>
+                  <th>Image</th>
+                  <th>Book Name</th>
+                  <th>Member Name</th>
+                  <th>Due Date</th>
+                  <th>Remarks</th>
+                </tr>
+               
+              </thead>
+              <tbody>
+                  <tr *ngFor='let user of list'> 
+                        <td><img
+                        [src] = 'user.image'
+                        [title] = 'user.title'
+                        [style.width.px] = 'imageWidth' 
+                        [style.margin.px] = 'imageMargin'></td>
+                      <td>{{ user.title}}</td>
+                      <td>{{ user.memberName}}</td>
+                      <td>{{ user.dueDate }}</td>
+                      <td>{{ user.remarks }}</td>
+                      <td>
+                        
+                        <button class="btn btn-success m-3" style="cursor:pointer" (click)="openDialog(user)" >Book Returned By Member</button>
+                        <button class="btn btn-warning m-3" style="cursor:pointer" >Send Remainder</button>
+                         
+                      </tr>              
+              </tbody>
+              </table>
+              </div>
+              </div>
+              </div>
+            </div>

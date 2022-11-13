@@ -35,6 +35,7 @@ import { WaitinglistComponent } from './components/Librarian/waitinglist/waiting
 import { IssuedComponent } from './components/Librarian/issued/issued.component';
 import { LibrarianDashboardComponent } from './components/Librarian/dashboard/dashboard.component';
 import { MemberDashboardComponent } from './components/Member/dashboard/dashboard.component';
+import { BookreturndialogComponent } from './dialogs/bookreturndialog/bookreturndialog.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { MemberDashboardComponent } from './components/Member/dashboard/dashboar
     WaitinglistComponent,
     IssuedComponent,
     LibrarianDashboardComponent,
-    MemberDashboardComponent
+    MemberDashboardComponent,
+    BookreturndialogComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +85,9 @@ import { MemberDashboardComponent } from './components/Member/dashboard/dashboar
     AuthService,
     RegisterDialogComponent,
     PromotedialogComponent,
-    DeleteuserdialogComponent
+    DeleteuserdialogComponent,
+    BookreturndialogComponent,
+    IssuedialogComponent
   ],
   bootstrap: [AppComponent]
 })

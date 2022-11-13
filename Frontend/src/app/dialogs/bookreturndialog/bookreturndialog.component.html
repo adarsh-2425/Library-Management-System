@@ -1,0 +1,6 @@
+<h2 mat-dialog-title class="title fw-bold">Are You Sure This Book is Returned?</h2>
+
+<mat-dialog-actions>
+    <button class="btn btn-light"  [mat-dialog-close]="true">No</button>
+    <button class="btn btn-success" [mat-dialog-close]="true" (click)="bookReturned()" >Yes</button>
+</mat-dialog-actions>
