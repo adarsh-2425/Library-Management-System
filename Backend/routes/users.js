@@ -53,40 +53,40 @@ router.put('/updateuser',(req,res)=>{
  });
 
 //  Edit Profile
-// router.put('/update',(req,res)=>{
+router.put('/update',(req,res)=>{
 
-//         id=req.body._id,
-//         Name= req.body.Name,
-//         role=req.body.role,
-//         gender= req.body.gender,
-//         email= req.body.email,
-//         about= req.body.about,
-//         phone=req.body.phone,
-//         username= req.body.username,
-//         password = req.body.password
+        id=req.body._id,
+        Name= req.body.Name,
+        role=req.body.role,
+        gender= req.body.gender,
+        email= req.body.email,
+        about= req.body.about,
+        phone=req.body.phone,
+        username= req.body.username,
+        password = req.body.password
 
-//         bcrypt.genSalt(10, (err, salt)=>{
-//             bcrypt.hash(password, salt, (err, hash)=>{
-//                 if(err) throw err;
-//                 Password = hash;
+        bcrypt.genSalt(10, (err, salt)=>{
+            bcrypt.hash(password, salt, (err, hash)=>{
+                if(err) throw err;
+                Password = hash;
 
-//    User.findByIdAndUpdate({"_id":id},
-//                                 {$set:{
-//                                     "Name": Name,
-//                                     'gender': gender,
-//                                     'email': email,
-//                                     'role': role,
-//                                     'about':about,
-//                                     'phone': phone,
-//                                     'username': username,
-//                                     'password': Password
-//                                 }})
-//    .then(function(err,user){
-//     res.json({success: true, msg: 'User Updated'})
-//    })
-// })
-// })
-//  });
+   User.findByIdAndUpdate({"_id":id},
+                                {$set:{
+                                    "Name": Name,
+                                    'gender': gender,
+                                    'email': email,
+                                    'role': role,
+                                    'about':about,
+                                    'phone': phone,
+                                    'username': username,
+                                    'password': Password
+                                }})
+   .then(function(err,user){
+    res.json({success: true, msg: 'User Updated'})
+   })
+})
+})
+ });
 
 //  Delete User
 router.delete('/delete/:id', (req,res)=>{

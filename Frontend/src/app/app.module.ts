@@ -30,6 +30,9 @@ import { DashboardAdminComponent } from './components/Admin/dashboard-admin/dash
 import { PromotedialogComponent } from './dialogs/promotedialog/promotedialog.component';
 import { DeleteuserdialogComponent } from './dialogs/deleteuserdialog/deleteuserdialog.component';
 import { EdituserComponent } from './components/edituser/edituser.component';
+import { BooksComponent } from './components/books/books/books.component';
+import { ViewbookComponent } from './components/books/viewbook/viewbook.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +47,9 @@ import { EdituserComponent } from './components/edituser/edituser.component';
     DashboardAdminComponent,
     PromotedialogComponent,
     DeleteuserdialogComponent,
-    EdituserComponent
+    EdituserComponent,
+    BooksComponent,
+    ViewbookComponent
   ],
   imports: [
     BrowserModule,

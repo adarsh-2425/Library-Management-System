@@ -1,0 +1,19 @@
+<div class="container">
+  <!-- Contents -->
+    <div   class="row">
+  <div class="col-lg-4 mb-4 d-flex align-items-stretch" *ngFor='let book of books'>
+      <div class="card shadow" (click)="viewBook(book)">
+        <div class="card-header">
+        </div>
+          <img class="card-img-top img-fluid img-thumbnail" [src]="book.image" alt="Card image cap">
+          <div class="card-body ">
+              <h5 class="card-title">{{book.title}}</h5> 
+              <p class="card-text">{{book.author}} </p>
+          </div>
+          
+          <button class="btn btn-primary" *ngIf="authService.Librarian()"  style="cursor:pointer" > Update</button>
+              <button class="btn btn-danger" *ngIf="authService.Librarian()"  style="cursor:pointer" > Delete</button>
+        </div>
+      </div>
+    </div>
+    </div>  

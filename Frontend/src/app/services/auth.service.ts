@@ -73,6 +73,13 @@ export class AuthService {
     }
   }
 
+  Member(){
+    const role =  localStorage.getItem('role')
+    if('member' == role){
+      return true;
+    }
+  }
+
   logout(){
     localStorage.clear();
   }
