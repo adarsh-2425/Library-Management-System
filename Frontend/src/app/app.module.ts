@@ -23,8 +23,6 @@ import {MatChipsModule} from '@angular/material/chips';
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
 import { RegisterDialogComponent } from './dialogs/register-dialog/register-dialog.component';
-import { LibrarianDashboardComponent } from './components/librarian-dashboard/librarian-dashboard.component';
-import { MemberDashboardComponent } from './components/member-dashboard/member-dashboard.component';
 import { ManageMemberComponent } from './components/Admin/manage-member/manage-member.component';
 import { DashboardAdminComponent } from './components/Admin/dashboard-admin/dashboard-admin.component';
 import { PromotedialogComponent } from './dialogs/promotedialog/promotedialog.component';
@@ -32,6 +30,12 @@ import { DeleteuserdialogComponent } from './dialogs/deleteuserdialog/deleteuser
 import { EdituserComponent } from './components/edituser/edituser.component';
 import { BooksComponent } from './components/books/books/books.component';
 import { ViewbookComponent } from './components/books/viewbook/viewbook.component';
+import { IssuedialogComponent } from './dialogs/issuedialog/issuedialog.component';
+import { WaitinglistComponent } from './components/Librarian/waitinglist/waitinglist.component';
+import { IssuedComponent } from './components/Librarian/issued/issued.component';
+import { LibrarianDashboardComponent } from './components/Librarian/dashboard/dashboard.component';
+import { MemberDashboardComponent } from './components/Member/dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [
@@ -41,15 +45,18 @@ import { ViewbookComponent } from './components/books/viewbook/viewbook.componen
     FooterComponent,
     HomeComponent,
     RegisterDialogComponent,
-    LibrarianDashboardComponent,
-    MemberDashboardComponent,
     ManageMemberComponent,
     DashboardAdminComponent,
     PromotedialogComponent,
     DeleteuserdialogComponent,
     EdituserComponent,
     BooksComponent,
-    ViewbookComponent
+    ViewbookComponent,
+    IssuedialogComponent,
+    WaitinglistComponent,
+    IssuedComponent,
+    LibrarianDashboardComponent,
+    MemberDashboardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,24 @@
+<!-- closebutton  -->
+<div class="text-end">
+    <abbr title="Close">
+    <i  [mat-dialog-close]="true" class="fa-solid fa-circle-xmark fa-2xl "></i>
+</abbr>
+</div>
+
+<h2 matDialogTitle class="title m-3">Issuing Book</h2>
+<form (ngSubmit)="issueBook()" class="forms" #issueDialog="ngForm">
+    <mat-dialog-content>
+        <div class="form-group m-3">
+            <label for="dueDate" class="fw-bold">Due Date : </label>
+            <input type="date" [(ngModel)]="item.dueDate" name="dueDate" id="dueDate">
+        </div>
+        <div class="form-group m-3">
+            <label for="remarks" class="fw-bold">Remarks : </label>
+            <input type="text" [(ngModel)]="item.remarks" name="remarks" id="remarks">
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button class="btn btn-success m-3"  type="submit"  [mat-dialog-close]="true">Done</button>
+        <button class="btn btn-danger"   [mat-dialog-close]="true">Cancel</button>  
+    </mat-dialog-actions>
+</form>

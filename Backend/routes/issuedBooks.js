@@ -15,6 +15,7 @@ router.get('/read',(req,res)=>{
 router.post('/takebook', (req,res)=>{
     let newIssuedBook = new IssuedBook({
         title: req.body.title,
+        image: req.body.image,
         memberName: req.body.memberName,
         memberEmail: req.body.memberEmail,
     });
@@ -64,14 +65,9 @@ router.put('/issuebook',(req,res)=>{
             'remarks':remarks
         }
     })
-    .then((issued,err)=>{
-        if(err){
-            res.json({success: false, msg: 'Failed to Issue book  '})
-        }
-        else{
-            res.json({success: true, msg: 'Book Issued. Return within date. A confirmation email also send'})
-        }
-    })
+    .then(()=>{
+        res.send();
+    });
 
     //confirmation email logic
 });
@@ -79,7 +75,7 @@ router.put('/issuebook',(req,res)=>{
 //LIBRARIAN ROUTES
 
 //Books waiting to be issued
-router.get('/waitingforissue', (req,res)=>{
+router.get('/waiting', (req,res)=>{
     IssuedBook.find({"issued": { $ne: true}})
     .then((books)=>{
         res.send(books)
@@ -87,7 +83,7 @@ router.get('/waitingforissue', (req,res)=>{
 });
 
 //Read All Issued Books
-router.get('/issuedbooks', (req,res)=>{
+router.get('/issued', (req,res)=>{
     IssuedBook.find({"issued": { $ne: null}})
     .then((books)=>{
         res.send(books)

@@ -54,17 +54,14 @@ export class LoginComponent implements OnInit {
           this.AuthService.storeUserData(data.token, data.user, data.role, data.Name, data.id, data.email);
           this.toastr.success('Login Successful');
           const role = localStorage.getItem('role');
-          console.log(role);
-          
-          
           if('Admin' == role){
             this.Router.navigate(['/admindashboard']);
           }
           else if('Librarian' == role){
-            this.Router.navigate(['/librariandashboard']);
+            this.Router.navigate(['/Librarian/dashboard']);
           }
           else{
-            this.Router.navigate(['/memberdashboard']);
+            this.Router.navigate(['/Member/dashboard']);
           }
         }
         else{

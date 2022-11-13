@@ -39,6 +39,7 @@ export class ViewbookComponent implements OnInit {
   takeBook(Books:any){
     let books = {
       title : Books.title,
+      image: Books.image,
       memberName : localStorage.getItem('Name'),
       memberEmail: localStorage.getItem('email')
     }

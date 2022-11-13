@@ -18,20 +18,21 @@ export class IssuedBooksService {
     }
 
     //Issue Book By Librarian
-    issueBook(book:any){
-      return this.http.put(`${this.server_address}/issuebook`, book)
+    issueBook(item:any){
+      return this.http.put(`${this.server_address}/issuebook`, item)
+      .subscribe(data =>{console.log(data)})
     }
 
     //LIBRARIAN SERVICES
 
     //Books waiting to be issued
     waitingForIssue(){
-      return this.http.get(`${this.server_address}/waitingforissue`)
+      return this.http.get(`${this.server_address}/waiting`)
     }
 
     //Read All Issued Books
     issuedBooks(){
-      return this.http.get(`${this.server_address}/issuedbooks`)
+      return this.http.get(`${this.server_address}/issued`)
     }
 
     //MEMBER SERVICES

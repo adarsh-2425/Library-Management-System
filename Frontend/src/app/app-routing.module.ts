@@ -5,9 +5,13 @@ import { ManageMemberComponent } from './components/Admin/manage-member/manage-m
 import { BooksComponent } from './components/books/books/books.component';
 import { ViewbookComponent } from './components/books/viewbook/viewbook.component';
 import { HomeComponent } from './components/home/home.component';
-import { LibrarianDashboardComponent } from './components/librarian-dashboard/librarian-dashboard.component';
+import { LibrarianDashboardComponent } from './components/Librarian/dashboard/dashboard.component';
+import { MemberDashboardComponent } from './components/Member/dashboard/dashboard.component';
+
+import { IssuedComponent } from './components/Librarian/issued/issued.component';
+import { WaitinglistComponent } from './components/Librarian/waitinglist/waitinglist.component';
 import { LoginComponent } from './components/login/login.component';
-import { MemberDashboardComponent } from './components/member-dashboard/member-dashboard.component';
+import { IssuedBooksService } from './services/issued-books.service';
 
 const routes: Routes = [
   {
@@ -23,17 +27,23 @@ const routes: Routes = [
     path: 'managemember', component: ManageMemberComponent
   },
   {
-    path: 'librariandashboard', component: LibrarianDashboardComponent
-  },
-  {
-    path: 'memberdashboard', component: MemberDashboardComponent
-  },
-  {
     path: 'books', component: BooksComponent,
   },
-      {
-        path: 'books/viewbook', component: ViewbookComponent
-      }
+  {
+    path: 'books/viewbook', component: ViewbookComponent
+  },
+  {
+    path: 'Librarian/waitinglist', component: WaitinglistComponent
+  },
+  {
+    path: 'Librarian/issued', component: IssuedComponent
+  },
+  {
+    path: 'Librarian/dashboard', component : LibrarianDashboardComponent
+  },
+  {
+    path: 'Member/dashboard', component: MemberDashboardComponent
+  }
 ];
 
 @NgModule({
