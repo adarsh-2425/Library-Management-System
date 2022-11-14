@@ -35,7 +35,6 @@ import { IssuedComponent } from './components/Librarian/issued/issued.component'
 import { LibrarianDashboardComponent } from './components/Librarian/dashboard/dashboard.component';
 import { MemberDashboardComponent } from './components/Member/dashboard/dashboard.component';
 import { BookreturndialogComponent } from './dialogs/bookreturndialog/bookreturndialog.component';
-import { AddBookComponent } from './components/Librarian/add-book/add-book.component';
 import { AddBookDialogComponent } from './components/Librarian/add-book-dialog/add-book-dialog.component';
 
 
@@ -59,7 +58,6 @@ import { AddBookDialogComponent } from './components/Librarian/add-book-dialog/a
     LibrarianDashboardComponent,
     MemberDashboardComponent,
     BookreturndialogComponent,
-    AddBookComponent,
     AddBookDialogComponent,
     
   ],

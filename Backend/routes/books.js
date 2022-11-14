@@ -9,6 +9,7 @@ router.post('/create', (req,res)=>{
         author: req.body.author,
         genre: req.body.genre,
         about: req.body.about,
+        publicationDate: req.body.publicationDate,
         image: req.body.image
     });
     Book.addBook(newBook, (err,book)=>{
@@ -46,6 +47,7 @@ router.put('/update',(req,res)=>{
     author = req.body.author,
     genre = req.body.genre,
     about = req.body.about,
+    publicationDate = req.body.publicationDate,
     image = req.body.image,
     Book.findByIdAndUpdate({'_id':id},
     {
@@ -54,6 +56,7 @@ router.put('/update',(req,res)=>{
             'author':author,
             'genre':genre,
             'about':about,
+            'publicationDate':publicationDate,
             'image':image
         }
     })

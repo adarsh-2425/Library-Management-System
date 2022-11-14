@@ -15,6 +15,9 @@ const BookSchema = mongoose.Schema({
     about: {
         type: String
     },
+    publicationDate: {
+        type: String
+    },
     image: {
         type: String
     }

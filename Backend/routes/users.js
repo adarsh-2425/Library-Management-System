@@ -12,21 +12,25 @@ const bcrypt = require('bcryptjs');
 router.post('/create', (req,res,next)=>{
     let newUser = new User({
         Name: req.body.Name,
+        Approverole: req.body.Approverole,
         gender: req.body.gender,
         email: req.body.email,
         phone: req.body.phone,
         username: req.body.username,
         password: req.body.password
     });
-
+    console.log(newUser.Approverole);
     User.addUser(newUser, (err,user)=>{
+        console.log(newUser.Approverole);
         if(err){
             res.json({success: false, msg:'Failed to register user' })
         }
-        else{
-            res.json({success: true, msg:'User Registered' })
-
+        else if(newUser.Approverole == 'Librarian'){
+            res.json({success: true, msg:'Hello Librarian, You Will Get an Email Notification When Admin Approves Your Credentials.You Can Login After That. Thank You' })
         }
+            else{
+            res.json({success: true, msg:'Member Registered. You can Login Now.' })
+            }
     })
 });
 

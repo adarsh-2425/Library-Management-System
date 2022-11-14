@@ -30,6 +30,7 @@ export class RegisterDialogComponent implements OnInit {
   gender:string = "";
   email:string = '';
   phone:string = "";
+  Approverole: string = '';
   username:string = '';
   password:string = '';
   repeatPassword:string = '';
@@ -84,10 +85,9 @@ if(this.validateService.isPassword(user.password)){
   onRegisterSubmit(){
     const user = {
       Name: this.Name.trim(),
-      lastName: this.lastName.trim(),
       gender: this.gender.trim(),
       phone: this.phone.trim(),
-      courseName: this.courseName,
+      Approverole: this.Approverole,
       email: this.email.trim(),
       username: this.email.trim(),
       password: this.password.trim(),

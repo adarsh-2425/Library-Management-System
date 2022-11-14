@@ -29,14 +29,15 @@
             <!-- <input type="text" [(ngModel)]="gender" name="gender" class="form-control"> -->
         </div>
 
-        <!-- Course Name -->
-        <!-- <div class="form-group mt-2">
-            <label for="name">Select Course</label>
-            <select name="courseName"  [(ngModel)]="courseName"  class="form-select" placeholder="courseName">
-                <option id="disabled" value="" style="color: grey;" disabled selected>Select Course</option>
-                <option   value="{{CourseName.Name}}" *ngFor="let CourseName of Courses">{{CourseName.Name}}</option>
+        <!-- Role -->
+        <div class="form-group mt-2">
+            <label for="name">Select Role</label>
+            <select name="courseName"  [(ngModel)]="Approverole"  class="form-select" placeholder="Role">
+                <option id="disabled" value="" style="color: grey;" disabled selected>Select Role</option>
+                <option   value="Member" >Member</option>
+                <option   value="Librarian" >Librarian</option>
             </select>
-        </div> -->
+        </div>
 
         
 
@@ -88,7 +89,9 @@
         </div>
         <br>
     </form>
-</mat-dialog-content>
+
     <mat-dialog-actions>
     <a id="already" [mat-dialog-close]="true" routerLink="/login">Already Have An Account?</a>
 </mat-dialog-actions>
+
+</mat-dialog-content>

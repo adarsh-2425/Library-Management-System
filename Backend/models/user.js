@@ -16,6 +16,9 @@ const UserSchema = mongoose.Schema({
         type: String,
         default:'member'  
     },
+    Approverole: {
+        type: String
+    },
     email: {
         type: String,
         required: true

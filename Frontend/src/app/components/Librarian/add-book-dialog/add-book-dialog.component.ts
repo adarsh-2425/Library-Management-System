@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BooksService } from 'src/app/services/books.service';
+import { ValidateService } from 'src/app/services/validate.service';
 
 @Component({
   selector: 'app-add-book-dialog',
@@ -15,13 +16,15 @@ export class AddBookDialogComponent implements OnInit {
     author: '',
     genre:'',
     about: '',
+    publicationDate:'',
     image: '',
   }
 
   constructor(
     private toastr: ToastrService,
     private router: Router,
-    private BooksService: BooksService
+    private BooksService: BooksService,
+    private ValidateService: ValidateService
   ) { }
 
   ngOnInit(): void {
@@ -31,10 +34,10 @@ export class AddBookDialogComponent implements OnInit {
     
     console.log(this.Book);
     
-    // if(!this.validateService.validateContent(content)){
-    //   this.toastr.error('You did not write any stories!!');
-    //   return false;
-    // }
+    if(!this.ValidateService.validateBook(this.Book)){
+      this.toastr.error('You did not write any stories!!');
+      return false;
+    }
 
     // this.ContentService.postContent(content).subscribe(
     //   data =>{

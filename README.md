@@ -13,3 +13,11 @@ https://stackoverflow.com/questions/19868016/check-that-field-exists-with-mongod
 
 ## Mongoose count() Function
 https://www.geeksforgeeks.org/mongoose-count-function/
+
+## How to use scrollStrategy in MatDialog?
+
+use the <mat-dialog-content> tag
+
+Day 4
+
+Librarian can register using the common register form. But account will get privileges only after Admin verify the credentials. Librarian will be notified via Email when Admin verifies the account.

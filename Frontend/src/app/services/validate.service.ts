@@ -49,7 +49,20 @@ export class ValidateService {
     else{
       return true;
     }
-  }  
+  } 
+  
+  validateBook(Book:any){
+    if(Book.title == ""){
+      return false;
+    }
+    if(Book.author == ""){
+      return false;
+    }
+    else{
+      return true;
+    }
+  } 
+
   isPassword(password:any){
     return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password);
   }
