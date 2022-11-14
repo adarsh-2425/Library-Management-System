@@ -31,13 +31,12 @@ router.get('/read',(req,res)=>{
     })
 });
 
-//Read Individual Book By Email
+//Read Individual Book By id
 router.get('/readone/:id', (req,res)=>{
-    id = req.params.id;
-    Book.findOne({'id':id})
-    .then((books)=>{
-        res.send(books)
-    })
+    Book.findById(req.params.id)
+      .then((book)=>{
+          res.send(book);
+      });
 });
 
 //Update Books

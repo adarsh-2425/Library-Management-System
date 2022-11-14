@@ -14,6 +14,9 @@ export class ViewbookComponent implements OnInit {
   Books = {
     title:'',
     author:'',
+    about:'',
+    genre:'',
+    publicationDate:'',
     image:''
   }
 

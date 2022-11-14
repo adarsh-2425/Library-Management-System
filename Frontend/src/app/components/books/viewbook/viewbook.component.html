@@ -6,8 +6,10 @@
     <div class="card" >
           <div class="card-body">
               <h1 class="card-title text-center">{{Books.title}}</h1>
-              <p><strong>{{Books.author}}</strong></p>
-              <p>About Book</p>
+              <p class="fw-bold text-danger">{{Books.genre}}</p>
+              <p>by: <strong>{{Books.author}}</strong></p>
+              <p>Published date : <strong>{{Books.publicationDate}}</strong></p>
+              <p>{{Books.about}}</p>
           <img class="img-fluid l contentimage" [src]="Books.image" alt="Card image cap">
           </div>
           <div>
