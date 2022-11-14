@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AddBookDialogComponent } from '../Librarian/add-book-dialog/add-book-dialog.component';
 
 @Component({
   selector: 'app-navbar',
@@ -14,6 +16,7 @@ export class NavbarComponent implements OnInit {
     public authService:AuthService,
     private router:Router,
     private toastr: ToastrService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -25,5 +28,9 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/login'])
      return false;
   };
+
+  openAddBookDialog(){
+    let dialogRef = this.dialog.open(AddBookDialogComponent, {disableClose: true});
+  }
 
 }

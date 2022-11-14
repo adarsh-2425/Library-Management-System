@@ -9,9 +9,16 @@ const BookSchema = mongoose.Schema({
     author: {
         type: String
     },
+    genre: {
+        type: String
+    },
+    about: {
+        type: String
+    },
     image: {
         type: String
     }
+    
 });
 
 const Book = module.exports = mongoose.model('Book', BookSchema);

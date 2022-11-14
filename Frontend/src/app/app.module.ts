@@ -27,7 +27,6 @@ import { ManageMemberComponent } from './components/Admin/manage-member/manage-m
 import { DashboardAdminComponent } from './components/Admin/dashboard-admin/dashboard-admin.component';
 import { PromotedialogComponent } from './dialogs/promotedialog/promotedialog.component';
 import { DeleteuserdialogComponent } from './dialogs/deleteuserdialog/deleteuserdialog.component';
-import { EdituserComponent } from './components/edituser/edituser.component';
 import { BooksComponent } from './components/books/books/books.component';
 import { ViewbookComponent } from './components/books/viewbook/viewbook.component';
 import { IssuedialogComponent } from './dialogs/issuedialog/issuedialog.component';
@@ -36,6 +35,8 @@ import { IssuedComponent } from './components/Librarian/issued/issued.component'
 import { LibrarianDashboardComponent } from './components/Librarian/dashboard/dashboard.component';
 import { MemberDashboardComponent } from './components/Member/dashboard/dashboard.component';
 import { BookreturndialogComponent } from './dialogs/bookreturndialog/bookreturndialog.component';
+import { AddBookComponent } from './components/Librarian/add-book/add-book.component';
+import { AddBookDialogComponent } from './components/Librarian/add-book-dialog/add-book-dialog.component';
 
 
 @NgModule({
@@ -50,7 +51,6 @@ import { BookreturndialogComponent } from './dialogs/bookreturndialog/bookreturn
     DashboardAdminComponent,
     PromotedialogComponent,
     DeleteuserdialogComponent,
-    EdituserComponent,
     BooksComponent,
     ViewbookComponent,
     IssuedialogComponent,
@@ -58,7 +58,10 @@ import { BookreturndialogComponent } from './dialogs/bookreturndialog/bookreturn
     IssuedComponent,
     LibrarianDashboardComponent,
     MemberDashboardComponent,
-    BookreturndialogComponent
+    BookreturndialogComponent,
+    AddBookComponent,
+    AddBookDialogComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -87,7 +90,8 @@ import { BookreturndialogComponent } from './dialogs/bookreturndialog/bookreturn
     PromotedialogComponent,
     DeleteuserdialogComponent,
     BookreturndialogComponent,
-    IssuedialogComponent
+    IssuedialogComponent,
+    AddBookDialogComponent
   ],
   bootstrap: [AppComponent]
 })

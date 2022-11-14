@@ -10,3 +10,6 @@
     border-color: red;
     background-color: white;
 }
+.cursorlinks{
+    cursor: pointer;
+}
