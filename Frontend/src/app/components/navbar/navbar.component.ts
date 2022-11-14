@@ -37,4 +37,10 @@ export class NavbarComponent implements OnInit {
     let dialogRef = this.dialog.open(AddBookDialogComponent, {disableClose: true});
   }
 
+  refreshBook(){
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/books']);
+  });
+  
+  }
 }

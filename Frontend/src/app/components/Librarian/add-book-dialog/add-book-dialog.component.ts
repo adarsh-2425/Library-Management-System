@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BooksService } from 'src/app/services/books.service';
 import { ValidateService } from 'src/app/services/validate.service';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-book-dialog',
@@ -24,7 +25,8 @@ export class AddBookDialogComponent implements OnInit {
     private toastr: ToastrService,
     private router: Router,
     private BooksService: BooksService,
-    private ValidateService: ValidateService
+    private ValidateService: ValidateService,
+    private matDialog: MatDialogRef<AddBookDialogComponent>
   ) { }
 
   ngOnInit(): void {
@@ -39,17 +41,20 @@ export class AddBookDialogComponent implements OnInit {
       return false;
     }
 
-    // this.ContentService.postContent(content).subscribe(
-    //   data =>{
-    //     if(data.success){
-    //       this.toastr.success('Post is Successfully Published!');
-    //       this.router.navigate(['/dashboard']);
-    //     }
-    //     else{
-    //       this.toastr.error("Post Cannot be Published At The Moment. Try Again later!")
-    //     }
-    //   }
-    // )
+    this.BooksService.postBook(this.Book).subscribe(
+        data =>{
+          if(data.success){
+            this.toastr.success('Post is Successfully Published!');
+            this.matDialog.close();
+            this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+              this.router.navigate(['/books']);
+          }); 
+          }
+          else{
+            this.toastr.error("Post Cannot be Published At The Moment. Try Again later!")
+          }
+        }
+      )
     
   }
 

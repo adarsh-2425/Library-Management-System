@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { BooksService } from 'src/app/services/books.service';
 import { Router } from '@angular/router';
+import { SearchService } from 'src/app/services/search.service';
 
 @Component({
   selector: 'app-books',
@@ -9,13 +10,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
-
+  
+  query:any = '';
+  queryType:any = 'title';
   books:any[] | undefined;
+  book={
+    title:'',
+    author:''
+  }
 
   constructor(
     public authService: AuthService,
     private BooksService: BooksService,
-    private Router: Router
+    private Router: Router,
+    private SearchService: SearchService
   ) { }
 
   ngOnInit(): void {
@@ -24,6 +32,21 @@ export class BooksComponent implements OnInit {
       this.books = JSON.parse(JSON.stringify(data))
     })
   };
+
+  search(){
+    let item = {
+      query : this.query,
+      queryType : this.queryType
+    }
+    //console.log(item);
+    
+    this.SearchService.search(item)
+    .subscribe((data)=>{
+      console.log(data);
+      this.books = data;
+      
+    })
+  }
 
   viewBook(book:any){
     localStorage.setItem("BookId", book._id.toString());

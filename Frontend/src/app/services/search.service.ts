@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
+  
 
   server_address = 'http://localhost:3000/search';
 
@@ -13,6 +14,11 @@ export class SearchService {
   ) { }
 
   search(item:any){
-    return this.http.post<any>(`${this.server_address}`, item);
+    let headers = new HttpHeaders()
+    headers.append('Content-Type', 'application/json')
+    return this.http.post<any>(`${this.server_address}`, item, {
+      headers
+    })
+    
   }
 }

@@ -7,21 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  query:any = '';
-  queryType:any = 'title';
+  
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }
 
-  search(){
-    let item = {
-      query : this.query,
-      queryType : this.queryType
-    }
-    console.log(item);
-    
-  }
+  
 
 }

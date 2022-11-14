@@ -3,15 +3,24 @@ const router = express.Router();
 const Book = require('../models/book');
 
 // Search 
-router.post('/', (req,res)=>{
-    const { type, query } = req.body;
+router.post('/',  (req,res)=>{
+    const { queryType, query } = req.body;
+    
+    switch(queryType){
+        case 'title':
+            Book.find({'title':query})
+            .then((item)=>{
+            res.send(item)
+        })
+        break;
 
-    Book.find({'type':query})
-    .then((books)=>{
-        res.send(books)
+        case 'author':
+            Book.find({'author':query})
+            .then((item)=>{
+            res.send(item)
+        })
+        break;
+    }
     });
-});
-
-
 
 module.exports = router;

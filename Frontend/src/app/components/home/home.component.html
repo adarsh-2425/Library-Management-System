@@ -1,16 +1,1 @@
-<!-- navbar section -->
-<nav class="navbar navbar-expand-md navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <div class="navbar-nav mx-auto">
-          <form (ngSubmit)="search()" class="d-flex m-1" role="search">
-          <input size="60" [(ngModel)]="query" name="query"  id="query" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <select class="queryType" [(ngModel)]="queryType" name="queryType" id="queryType">
-            <option value="title">Title</option>
-            <option value="author">Author</option>
-          </select>
 
-          <button class=" btn btn-outline-success" type="submit">Search</button>
-        </form>
-        </div>
-      </div>
-  </nav>
