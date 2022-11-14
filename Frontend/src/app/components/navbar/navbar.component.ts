@@ -5,12 +5,16 @@ import { AuthService } from 'src/app/services/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddBookDialogComponent } from '../Librarian/add-book-dialog/add-book-dialog.component';
 
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
+  query:any = '';
+  queryType:any = '';
 
   constructor(
     public authService:AuthService,
