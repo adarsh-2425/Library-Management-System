@@ -25,15 +25,14 @@ const app = express();
 const users = require('./routes/users');
 const books = require('./routes/books')
 const issuedBooks = require('./routes/issuedBooks');
+const search = require('./routes/search')
 
-// CORS Middleware
+//Middleware
 app.use(cors());
-
-// bodyparser parses incoming request. eg: parsing content from form
 app.use(bodyParser.json());
-
 app.use('/users', users);
 app.use('/books', books);
+app.use('/search', search);
 app.use('/issuedbooks', issuedBooks);
 
 // Set Static Folderr
