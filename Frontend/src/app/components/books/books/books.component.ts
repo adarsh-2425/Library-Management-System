@@ -38,13 +38,9 @@ export class BooksComponent implements OnInit {
       query : this.query,
       queryType : this.queryType
     }
-    //console.log(item);
-    
     this.SearchService.search(item)
     .subscribe((data)=>{
-      console.log(data);
       this.books = data;
-      
     })
   }
 
