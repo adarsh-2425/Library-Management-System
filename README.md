@@ -21,3 +21,8 @@ use the <mat-dialog-content> tag
 Day 4
 
 Librarian can register using the common register form. But account will get privileges only after Admin verify the credentials. Librarian will be notified via Email when Admin verifies the account.
+
+Day 5
+
+Implemented email scheduling using node-scheduler.
+Learned how to convert date to yesterday date.
