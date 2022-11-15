@@ -35,6 +35,8 @@ export class WaitinglistComponent implements OnInit {
    
     localStorage.setItem("IssueId", user._id.toString());
     localStorage.setItem("memberEmail", user.memberEmail.toString());
+    localStorage.setItem("bookTitle", user.title.toString());
+
     let dialogRef = this.dialog.open(IssuedialogComponent);
     
       height :'40%'

@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const IssuedBook = require('../models/issuedBook');
-
+const schedule = require('node-schedule');
+const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 //View all books
 router.get('/read',(req,res)=>{
@@ -29,7 +31,7 @@ router.post('/takebook', (req,res)=>{
     query.count(function (err, count) {
     if (err) throw (err)
     else
-    if(count <= 5){
+    if(count <= 4){
 
         //Submitting book to librarian
         IssuedBook.addBook(newIssuedBook, (err,book)=>{
@@ -86,6 +88,7 @@ router.get('/viewissuedbooks/:email', (req,res)=>{
 //Issue Book By Librarian
 router.put('/issuebook',(req,res)=>{
     id = req.body._id,
+    title = req.body.title,
     memberEmail = req.body.memberEmail,
     dueDate = req.body.dueDate,
     issued = 'true',
@@ -101,10 +104,38 @@ router.put('/issuebook',(req,res)=>{
     })
     .then(()=>{
         res.send();
+
+        
     });
 
-    //confirmation email logic
-});
+    // Scheduling before due date
+    var Test = '2022-11-15'+'T16:13:00.000'; //duedate
+    console.log(Test);
+    lol='lol ok';
+    console.log(lol);
+    var TestDatee = '2022-11-15' +'T12:15:00.000Z';
+    console.log(TestDatee);
+
+    var datee = new Date(TestDatee);
+    var yesterdayy = new Date(datee - 24*60*60*1000);
+    var noww = yesterdayy.toISOString().replace('Z', '');
+    //let rundate = new Date('2022-11-18T11:44:00.000+5:30');
+        
+      let testJob = 'test1';
+      let Job = schedule.scheduleJob(testJob,noww,()=>{
+        //Job Here
+        // setup email data with unicode symbols
+        console.log(noww);
+        console.log('lol');
+   
+    
+                //Stopping the Job
+                let current_job = schedule.scheduledJobs[testJob]
+                current_job.cancel();   
+    })
+   
+
+})
 
 //Books waiting to be issued
 router.get('/waiting', (req,res)=>{

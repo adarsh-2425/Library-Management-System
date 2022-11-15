@@ -15,6 +15,7 @@ export class IssuedialogComponent implements OnInit {
   
   item = {
     _id : localStorage.getItem('IssueId'),
+    title: localStorage.getItem('bookTitle'),
     memberEmail : localStorage.getItem('memberEmail'),
     dueDate : '',
     remarks : ''
@@ -34,6 +35,10 @@ export class IssuedialogComponent implements OnInit {
   issueBook(){
     this.IssuedBooksService.issueBook(this.item)
     this.toastr.success('Book Issued')
+    
+    localStorage.removeItem('IssueId');
+    localStorage.removeItem('bookTitle');
+    localStorage.removeItem('memberEmail');
     this.dialogRef.close();
   }
 

@@ -19,6 +19,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatChipsModule} from '@angular/material/chips';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MomentDateAdapter } from '@angular/material-moment-adapter';
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
@@ -80,6 +84,8 @@ import { AddBookDialogComponent } from './components/Librarian/add-book-dialog/a
     MatFormFieldModule,
     MatChipsModule,
     MatSliderModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     ValidateService,
@@ -89,7 +95,8 @@ import { AddBookDialogComponent } from './components/Librarian/add-book-dialog/a
     DeleteuserdialogComponent,
     BookreturndialogComponent,
     IssuedialogComponent,
-    AddBookDialogComponent
+    AddBookDialogComponent,
+    
   ],
   bootstrap: [AppComponent]
 })
