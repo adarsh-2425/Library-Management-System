@@ -108,33 +108,88 @@ router.put('/issuebook',(req,res)=>{
         
     });
 
+     // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+    host: "smtp.zoho.in", //mail.google.com
+    port: 465,
+    secure: true, // true for 465, false for other ports
+    auth: {
+      user: process.env.Email, // user
+      pass: process.env.Password // password
+    },
+    tls:{
+        rejectUnauthorized:false
+    }
+  });
+
+  // setup email data with unicode symbols
+  let mailOptions = {
+    from: '"Librarian" <adarsh.lol2425@zohomail.in>', // sender address
+    to: memberEmail, // list of receivers
+    subject: "Book Issued by Librarian", // Subject line
+    text: `Book "${title}" is Issued.\n
+    Due Date : ${dueDate}.\n
+    Please Return the Book Within Due Date.\n
+    Remarks : ${remarks}`, // plain text body
+  };
+
+   // send mail with defined transport object
+   transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.log(error);
+    }
+    console.log("Message sent: %s", info.messageId);
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+  });
+
     // Scheduling before due date
-    var Test = '2022-11-15'+'T16:13:00.000'; //duedate
-    console.log(Test);
-    lol='lol ok';
-    console.log(lol);
-    var TestDatee = '2022-11-15' +'T12:15:00.000Z';
-    console.log(TestDatee);
+    var TestDatee = dueDate +'T00:00:00.000Z';
 
     var datee = new Date(TestDatee);
+
+    //Convert Date to Yesterday date
     var yesterdayy = new Date(datee - 24*60*60*1000);
+
+    //Replacing 'Z' from output date. Because node scheduler doesnt work if 'Z' presents.
     var noww = yesterdayy.toISOString().replace('Z', '');
-    //let rundate = new Date('2022-11-18T11:44:00.000+5:30');
-        
-      let testJob = 'test1';
+       
+    
+      let testJob = 'test1'; //assigning id
       let Job = schedule.scheduleJob(testJob,noww,()=>{
         //Job Here
-        // setup email data with unicode symbols
         console.log(noww);
-        console.log('lol');
-   
-    
+        // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+        host: "smtp.zoho.in", //mail.google.com
+        port: 465,
+        secure: true, // true for 465, false for other ports
+        auth: {
+          user: process.env.Email, // user
+          pass: process.env.Password // password
+        },
+        tls:{
+            rejectUnauthorized:false
+        }
+      });
+      
+        let mailOptions = {
+            from: '"Librarian" <adarsh.lol2425@zohomail.in>', // sender address
+            to: memberEmail, // list of receivers
+            subject: "Due Date is Tomorrow", // Subject line
+            text: `Return your Book Immediately`, // plain text body
+          };
+            // send mail with defined transport object
+            transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+              return console.log(error);
+            }
+            console.log("Message sent: %s", info.messageId);
+            console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+          });
                 //Stopping the Job
                 let current_job = schedule.scheduledJobs[testJob]
                 current_job.cancel();   
     })
-   
-
 })
 
 //Books waiting to be issued
