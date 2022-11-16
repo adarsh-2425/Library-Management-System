@@ -1,10 +1,11 @@
 <div class="container">
   <!-- navbar section -->
-<nav class="navbar navbar-expand-md navbar-expand-lg navbar-light bg-light">
+<nav class="navbar fixed-top mt-5 navbar-expand-md navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
       <div class="navbar-nav mx-auto">
-        <form (ngSubmit)="search()" class="d-flex m-1" role="search">
-        <input size="60" [(ngModel)]="query" name="query"  id="query" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form (ngSubmit)="search()" class="d-flex " role="search">
+        <input size="50" [(ngModel)]="query" name="query"  id="query" class="form-control " type="search" placeholder="Search" aria-label="Search">
+        
         <select class="queryType" [(ngModel)]="queryType" name="queryType" id="queryType">
           <option value="title">Title</option>
           <option value="author">Author</option>
@@ -19,18 +20,19 @@
   <!-- Contents -->
     <div   class="row">
   <div class="col-lg-4 mb-4 d-flex align-items-stretch" *ngFor='let book of books'>
-      <div class="card shadow" (click)="viewBook(book)">
+      <div class="card shadow" >
         <div class="card-header">
         </div>
-          <img class="card-img-top img-fluid img-thumbnail" [src]="book.image" alt="Card image cap">
-          <div class="card-body ">
+          <img  class="card-img-top img-fluid img-thumbnail" [src]="book.image" alt="Card image cap">
+          <div class="card-body " (click)="viewBook(book)">
               <h5 class="card-title">{{book.title}}</h5> 
               <p class="card-text">{{book.author}} </p>
           </div>
-          
+          <div class="buttons">
           <button class="btn btn-primary" *ngIf="authService.Librarian()"  style="cursor:pointer" > Update</button>
-              <button class="btn btn-danger" *ngIf="authService.Librarian()"  style="cursor:pointer" > Delete</button>
-        </div>
+              <button class="btn btn-danger" (click)="delete(book)" *ngIf="authService.Librarian()"  style="cursor:pointer" > Delete</button>
+            </div>
+            </div>
       </div>
     </div>
     </div>  

@@ -1,4 +1,6 @@
 <div class="container">
+
+    <!-- First Row -->
     <div class="row">
         <div class="col-lg-3 mt-5">
             <!-- Card 1 -->
@@ -76,5 +78,191 @@
             </div>
 
         </div>
+    
+
+    <!-- Second Row -->
+    <div class="row">
+        <div class="line mt-5"></div> <!--Black Line-->
+        <div class="text-center mt-4 mb-3">
+            <h6 class="fw-bold">NEW & NOTEWORTHY</h6>
+        </div>
+        <!-- Image Loop -->
+        <div class="row">
+            <div class="col-lg-2 col-sm-6 col-md-6 mb-2 d-flex" *ngFor='let book of books'>
+                <div class="card clickcard" (click)="viewBook(book)">
+                    <img  class="card-img-top img-fluid" [src]="book.image" alt="Card image cap">
+
+                    <div class="card-body">
+                        <p class="card-title  book-title">{{book.title}}</p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Third Row -->
+    <div class="row">
+        <div class="line mt-5"></div> <!--Black Line-->
+        <div class="text-center mt-4 mb-3">
+            <h6 class="fw-bold">FEATURED WRITERS</h6>
+        </div>
+        <div class="col-md-12 col-lg-6 col-sm-12 ">
+            <div class="row">
+                <div class="col-sm-6 col-lg-6 col-md-6 ">
+                    <div class="card">
+                        <div class="card-image-top">
+                            <img class="img-fluid" src="https://s3.amazonaws.com/loa-production-23ffs35gui41a/writers/images/000/000/794/listing_big/anaya_rudolfo_WD.jpg?1660311710" alt="">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">
+                                Rudolfo Anaya
+                            </div>
+                            <div class="card-text">
+                                <p class="text-danger">Learn more</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-6 col-md-6 ">
+                    <div class="card">
+                        <div class="card-image-top">
+                            <img class="img-fluid" src="https://s3.amazonaws.com/loa-production-23ffs35gui41a/writers/images/000/000/702/listing_big/petry_ann_WD.jpg?1547059859" alt="">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">
+                                Ann Petry
+                            </div>
+                            <div class="card-text">
+                                <p class="text-danger">Learn more</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-sm-6 col-sm-6 mt-5">
+                    <div class="card">
+                        <div class="card-image-top">
+                            <img class="img-fluid" src="https://s3.amazonaws.com/loa-production-23ffs35gui41a/writers/images/000/000/206/listing_big/leonard_elmore_WD.jpg?1447867857" alt="">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">
+                                Elmore Leonard
+                            </div>
+                            <div class="card-text">
+                                <p class="text-danger">Learn more</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-sm-6 mt-5">
+                    <div class="card">
+                        <div class="card-image-top">
+                            <img class="img-fluid" src="https://s3.amazonaws.com/loa-production-23ffs35gui41a/writers/images/000/000/655/listing_big/le_guin_ursula_WD.jpg?1472665265" alt="">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">
+                                Ursula K. Le Guin
+                            </div>
+                            <div class="card-text">
+                                <p class="text-danger">Learn more</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card flex-row flex-wrap">
+                <div class="card-header border-0">
+                    <img src="https://s3.amazonaws.com/loa-production-23ffs35gui41a/writers/image_weeklies/000/000/280/home_extra/crane_stephen_WD_wotw.jpg?1472141266" alt="">
+                </div>
+                <div class="card-block px-2">
+                    <p class="card-text text-danger">WRITER OF THE WEEK</p>
+                    <p class="card-title stephen">Stephen <br> Crane</p>
+                <p class="card-text">
+                        “No artist of Crane's caliber<br>
+                        looked so steadily at the <br>
+                        wholeness of American life<br>
+                        and discovered such <br>
+                        far-reaching symbolic <br>
+                        equivalents for its <br>
+                        unceasing state of <br>
+                        civil war.”<br>
+                        —Ralph Ellison
+                        
+                </p>
+                <p class="text-danger">Learn more</p>
+                
+            </div>
+            </div>
+        </div>
     </div>
 
+<!--Fourth Row  -->
+<div class="row">
+    <div class="line mt-5"></div> <!--Black Line-->
+        <div class="text-center mt-4 mb-3">
+            <h6 class="fw-bold">FEATURED TOPICS</h6>
+        </div>
+        <div style="display: flex; justify-content: center;">
+            <p class="card-title m-2"> Books for Young Readers </p>
+            <p class="card-title m-2"> The Founders </p>
+            <p class="card-title m-2 "> Hollywood </p>
+          </div>
+</div>
+
+<!-- Fifth Row -->
+<div class="row">
+<div class="line mt-5"></div> <!--Black Line-->
+<div class="col-lg-4 col-sm-4 col-md-4 mt-5">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title text-danger">CURATOR</div>
+            <div class="card-text">
+                <p>
+                    A champion of America’s great writers and timeless works, Library of America guides readers in finding and exploring the exceptional writing that reflects the nation's history and culture.
+                </p>
+            </div>
+            <div class="card-text text-danger">
+                <p>Learn More</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 col-sm-4 col-md-4 mt-5">
+    <div class="card ">
+        <div class="card-body">
+            <div class="card-title text-danger">
+                <p>PUBLISHER</p>
+            </div>
+            <div class="card-text">
+                <p>
+                    From poetry, novels, and memoirs to journalism, crime writing, and science fiction, the more than 300 volumes published by Library of America are widely recognized as America’s literary canon.
+                </p>
+            </div>
+            <div class="card-text text-danger">
+                <p>Browse our books</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 col-sm-4 col-md-4 mt-5">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title text-danger">
+                <p>NON-PROFIT</p>
+            </div>
+            <div class="card-text">
+                <p>
+                    With contributions from donors, Library of America preserves and celebrates a vital part of our cultural heritage for generations to come.
+                </p>
+            </div>
+            <div class="card-text text-danger">
+                <p>Support our mission</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+    
+</div>

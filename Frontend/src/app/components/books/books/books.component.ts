@@ -49,4 +49,11 @@ export class BooksComponent implements OnInit {
     this.Router.navigate(['books/viewbook'])
   }
 
+  delete(book:any){
+     this.BooksService.deleteBook(book._id)
+     .subscribe(()=>{
+      this.ngOnInit();
+     })
+  }
+
 }

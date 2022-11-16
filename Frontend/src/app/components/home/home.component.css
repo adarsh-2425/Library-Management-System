@@ -7,11 +7,21 @@
 
 .card-title{
     font-size: x-large;
+    cursor: pointer;
 }
 .card-title:hover{
     color: red;
 }
+.book-title{
+    font-size: medium;
+}
 .main-text{
     font-size: xx-large;
+}
+.clickcard{
+    cursor: pointer;
+}
+.stephen{
+    font-size:xx-large
 }
 
