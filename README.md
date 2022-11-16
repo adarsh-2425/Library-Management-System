@@ -32,3 +32,6 @@ Day 5
 
 Implemented email scheduling using node-scheduler.
 Learned how to convert date to yesterday date.
+
+Day 6
+Designed Home Page with inspiration from 'Library Of America' Website.
