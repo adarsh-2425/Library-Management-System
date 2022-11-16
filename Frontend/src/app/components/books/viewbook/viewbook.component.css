@@ -1,0 +1,52 @@
+.topcard{
+    margin-top: 3em;
+}
+.card{
+    width: 19vw;
+}
+#author{
+    font-size: x-large;
+    font-weight: lighter;
+}
+#genre{
+    text-decoration: underline;
+    font-weight: bold;
+    margin-left: 0.5em;
+    text-decoration-color: green;
+}
+#pages, #published{
+    font-size: small;
+    color: gray;
+}
+.line{
+    height: 0.1em;
+    background-color: grey;
+    margin-top: 2em;
+}
+.people{
+    margin-top: 2em;
+    font-size: small;
+}
+.aboutauthor{
+    margin-top: 1em;
+}
+.roundedimage{
+    margin-top: 1em;
+    width: 5em;
+}
+.nameauthor{
+    margin-top: 1em;
+
+}
+#Kathryn{
+    font-weight: bold;
+}
+#threebook{
+    color: grey;
+}
+/* Always Place at bottom */
+@media only screen and (max-width: 600px) {
+    .card{
+        width: 95vw;
+    }
+  }
