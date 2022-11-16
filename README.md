@@ -18,6 +18,12 @@ https://www.geeksforgeeks.org/mongoose-count-function/
 
 use the <mat-dialog-content> tag
 
+## Image falling out of bootstrap card
+use 'img-fluid' class
+```
+<img class="img-fluid" src="https://source.unsplash.com/XXpbdU_31Sg" alt="">
+```
+
 Day 4
 
 Librarian can register using the common register form. But account will get privileges only after Admin verify the credentials. Librarian will be notified via Email when Admin verifies the account.
