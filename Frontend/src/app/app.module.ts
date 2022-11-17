@@ -40,6 +40,8 @@ import { LibrarianDashboardComponent } from './components/Librarian/dashboard/da
 import { MemberDashboardComponent } from './components/Member/dashboard/dashboard.component';
 import { BookreturndialogComponent } from './dialogs/bookreturndialog/bookreturndialog.component';
 import { AddBookDialogComponent } from './components/Librarian/add-book-dialog/add-book-dialog.component';
+import { MemberissuedbooksComponent } from './components/Member/memberissuedbooks/memberissuedbooks.component';
+import { MembersubmittedbooksComponent } from './components/Member/membersubmittedbooks/membersubmittedbooks.component';
 
 
 @NgModule({
@@ -63,6 +65,8 @@ import { AddBookDialogComponent } from './components/Librarian/add-book-dialog/a
     MemberDashboardComponent,
     BookreturndialogComponent,
     AddBookDialogComponent,
+    MemberissuedbooksComponent,
+    MembersubmittedbooksComponent,
     
   ],
   imports: [

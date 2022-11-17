@@ -1,0 +1,20 @@
+<div class="container">
+<!-- Contents -->
+<div class="row">
+    <div class="col-lg-3 mb-4 d-flex align-items-stretch" *ngFor='let book of books'>
+        <div class="card shadow" >
+          <div class="card-header">
+          </div>
+            <img  class="card-img-top img-fluid img-thumbnail" [src]="book.image" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title mb-4">{{book.title}}</h5>
+                <p class="card-text">Due Date: <span class="text-danger fw-bold">{{book.dueDate}}</span> </p>
+                <p class="card-text">Remarks : <strong>{{book.remarks}} </strong></p>
+              </div>
+     
+                <div class="card-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

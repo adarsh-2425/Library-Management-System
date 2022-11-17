@@ -21,11 +21,11 @@ export class IssuedBooksService {
 
     //View the books submitted  by member
     SubmittedBooksMember(email:any){
-      this.http.get(`${this.server_address}/viewsubmittedbooks/`+email)
+      return this.http.get(`${this.server_address}/viewsubmittedbooks/`+email)
     }
 
     IssuedBooksMember(email:any){
-      this.http.get(`${this.server_address}/viewissuedbooks/`+email)
+      return this.http.get(`${this.server_address}/viewissuedbooks/`+email)
     }
 
     //LIBRARIAN SERVICES

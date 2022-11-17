@@ -12,6 +12,8 @@ import { IssuedComponent } from './components/Librarian/issued/issued.component'
 import { WaitinglistComponent } from './components/Librarian/waitinglist/waitinglist.component';
 import { LoginComponent } from './components/login/login.component';
 import { IssuedBooksService } from './services/issued-books.service';
+import { MemberissuedbooksComponent } from './components/Member/memberissuedbooks/memberissuedbooks.component';
+import { MembersubmittedbooksComponent } from './components/Member/membersubmittedbooks/membersubmittedbooks.component';
 
 const routes: Routes = [
   {
@@ -43,7 +45,14 @@ const routes: Routes = [
   },
   {
     path: 'Member/dashboard', component: MemberDashboardComponent
+  },
+  {
+    path: 'Member/issuedbooks', component: MemberissuedbooksComponent
+  },
+  {
+    path: 'Member/submittedbooks', component: MembersubmittedbooksComponent
   }
+
 ];
 
 @NgModule({
