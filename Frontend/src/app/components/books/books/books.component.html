@@ -1,6 +1,6 @@
 <div class="container">
   <!-- navbar section -->
-<nav class="navbar fixed-top mt-5 navbar-expand-md navbar-expand-lg navbar-light bg-light">
+<nav class="navbar  navbar-expand-md navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
       <div class="navbar-nav mx-auto">
         <form (ngSubmit)="search()" class="d-flex " role="search">
@@ -18,21 +18,23 @@
 </nav>
 
   <!-- Contents -->
-    <div   class="row">
-  <div class="col-lg-4 mb-4 d-flex align-items-stretch" *ngFor='let book of books'>
-      <div class="card shadow" >
-        <div class="card-header">
-        </div>
-          <img  class="card-img-top img-fluid img-thumbnail" [src]="book.image" alt="Card image cap">
-          <div class="card-body " (click)="viewBook(book)">
-              <h5 class="card-title">{{book.title}}</h5> 
-              <p class="card-text">{{book.author}} </p>
+    <div class="row">
+      <div class="col-lg-3 mb-4 d-flex align-items-stretch" *ngFor='let book of books'>
+          <div class="card shadow" >
+            <div class="card-header">
+            </div>
+              <img (click)="viewBook(book)" class="card-img-top img-fluid img-thumbnail" [src]="book.image" alt="Card image cap">
+              <div class="card-body">
+                  <h5 class="card-title">{{book.title}}</h5>
+                  <p class="card-text ">{{book.author}} </p>
+                  <!-- <p class="card-text link">  <a (click)="ViewContent(content)">Read More...</a> </p> -->
+              </div>
+       
+              <button class="btn btn-primary" *ngIf="authService.Librarian()"  style="cursor:pointer" > Update</button>
+                    <button class="btn btn-danger" (click)="delete(book)" *ngIf="authService.Librarian()"  style="cursor:pointer" > Delete</button>
+                  <div class="card-footer">
+              </div>
+            </div>
           </div>
-          <div class="buttons">
-          <button class="btn btn-primary" *ngIf="authService.Librarian()"  style="cursor:pointer" > Update</button>
-              <button class="btn btn-danger" (click)="delete(book)" *ngIf="authService.Librarian()"  style="cursor:pointer" > Delete</button>
-            </div>
-            </div>
-      </div>
-    </div>
+        </div>
     </div>  

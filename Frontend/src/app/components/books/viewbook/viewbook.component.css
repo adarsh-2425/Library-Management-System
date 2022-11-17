@@ -14,7 +14,7 @@
     margin-left: 0.5em;
     text-decoration-color: green;
 }
-#pages, #published{
+#pages, #published, #genres{
     font-size: small;
     color: gray;
 }
@@ -44,9 +44,19 @@
 #threebook{
     color: grey;
 }
+.takebookbutton:hover{
+    background-color: violet;
+}
+.imagecard{
+   position: fixed;
+}
+
 /* Always Place at bottom */
 @media only screen and (max-width: 600px) {
     .card{
         width: 95vw;
+    }
+    .imagecard{
+        position: relative;
     }
   }
