@@ -20,6 +20,13 @@ router.post('/',  (req,res)=>{
             res.send(item)
         })
         break;
+
+        case 'genre':
+            Book.find({'genre':query})
+            .then((item)=>{
+            res.send(item)
+        })
+        break;
     }
     });
 
