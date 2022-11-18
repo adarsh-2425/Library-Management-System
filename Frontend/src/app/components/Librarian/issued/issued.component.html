@@ -1,6 +1,5 @@
 <div class="container">
-  <div class="col-12 col-lg-12">
-    <div @fade class=' card'>
+    <div @fade class='card'>
         <div class='card-body'>            
           <div class='table-responsive'>
             <table class='table'>
@@ -8,10 +7,8 @@
               <thead class="head">
                 <tr>
                   <th>Image</th>
-                  <th>Book Name</th>
                   <th>Member Name</th>
                   <th>Due Date</th>
-                  <th>Remarks</th>
                 </tr>
                
               </thead>
@@ -22,15 +19,13 @@
                         [title] = 'user.title'
                         [style.width.px] = 'imageWidth' 
                         [style.margin.px] = 'imageMargin'></td>
-                      <td>{{ user.title}}</td>
                       <td>{{ user.memberName}}</td>
                       <td>{{ user.dueDate }}</td>
-                      <td>{{ user.remarks }}</td>
                       <td>
                         
                         <button class="btn btn-success m-3" style="cursor:pointer" (click)="openDialog(user)" >Book Returned By Member</button>
-                        <button class="btn btn-warning m-3" style="cursor:pointer" >
-                          <a href="mailto:{{user.memberEmail}}">Contact Member via Email</a> 
+                        <button class="btn btn-info m-3" style="cursor:pointer" >
+                          <a href="mailto:{{user.memberEmail}}"><span class="text-dark"> Contact Member via Email</span></a> 
                         </button>
                       </tr>              
               </tbody>
@@ -38,5 +33,4 @@
               </div>
               </div>
               </div>
-            </div>
             </div>

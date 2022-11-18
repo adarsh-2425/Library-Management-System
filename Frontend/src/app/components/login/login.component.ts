@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
           this.toastr.success('Login Successful');
           const role = localStorage.getItem('role');
           if('Admin' == role){
-            this.Router.navigate(['/admindashboard']);
+            this.Router.navigate(['/managemember']);
           }
           else if('Librarian' == role){
             this.Router.navigate(['/Librarian/dashboard']);

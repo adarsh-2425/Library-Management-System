@@ -1,4 +1,12 @@
+<div class="container">
+  <!-- heading -->
+  <div class="mt-2 mb-4 p-5 bg-success text-white rounded text-center">
+    <h1>Welcome {{Name}}</h1>
+    <p>Role : {{Role}}</p>
+
+    </div>
 <div class='card'>
+  <h3 class="text-center fw-bold text-primary mt-4">Manage Users</h3>
     <div class='card-body'>            
       <div class='table-responsive'>
         <table class='table'>
@@ -15,7 +23,6 @@
                   <td>{{ user.role }}</td>
                   <td>
                     <button class="btn btn-success custom-class"  style="cursor:pointer" (click)="promote(user)"  style="margin-left: 20px;">Approve as Librarian</button>
-                    <button class="btn btn-info custom-class"  style="cursor:pointer" (click)="editUser(user)"  style="margin-left: 20px;">Edit User</button>
                     <button class="btn btn-danger custom-class"  style="cursor:pointer" (click)="deleteUser(user)" >Delete User</button>
                 </tr>              
           </tbody>
@@ -23,3 +30,4 @@
           </div>
           </div>
           </div>
+        </div>

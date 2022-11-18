@@ -15,6 +15,8 @@ export class ManageMemberComponent implements OnInit {
 
   visible: any;
   users:any[] | undefined
+  Name = localStorage.getItem('Name');
+  Role = localStorage.getItem('role');
 
   constructor(
     private userService: UsersService,

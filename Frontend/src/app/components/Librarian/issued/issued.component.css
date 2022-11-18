@@ -1,3 +1,10 @@
 a{
     text-decoration: none;
 }
+/* Always Place at bottom */
+@media only screen and (max-width: 600px) {
+    table {
+        width:100%;
+    }
+    
+  }

@@ -38,7 +38,7 @@ router.post('/create', (req,res,next)=>{
 router.get('/read',function(req,res){
     // Find all except one in mongodb
     // Use $ne for one user db.user.find( {_id:{$ne:"5848e9ecaec0f31372816a26"} })
-    User.find()
+    User.find({ _id: { $ne: "636ddb081b87ce086260f5ef"} })
                     .then(function(users){
                         res.send(users);
                     });   
