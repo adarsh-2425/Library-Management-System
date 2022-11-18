@@ -98,9 +98,3 @@ https://stackoverflow.com/questions/19868016/check-that-field-exists-with-mongod
 ## Mongoose count() Function
 https://www.geeksforgeeks.org/mongoose-count-function/
 
-## How to use scrollStrategy in MatDialog?
-
-use``` 
-<mat-dialog-content>
-``` 
-
