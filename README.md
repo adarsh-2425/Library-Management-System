@@ -104,8 +104,3 @@ use```
 <mat-dialog-content>
 ``` 
 
-## Image falling out of bootstrap card
-use 'img-fluid' class
-```
-<img class="img-fluid" src="https://source.unsplash.com/XXpbdU_31Sg" alt="">
-```
