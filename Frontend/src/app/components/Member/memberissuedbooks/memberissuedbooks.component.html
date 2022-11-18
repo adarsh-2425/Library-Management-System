@@ -1,6 +1,10 @@
+<div [ngStyle]="{'background': 'linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147))'}">
+
 <div class="container">
 <!-- Contents -->
 <div class="row">
+  <h3 class="fw-bold text-center mt-5 text-primary maintitle">Issued Books</h3>
+
     <div class="col-lg-3 mb-4 d-flex align-items-stretch" *ngFor='let book of books'>
         <div class="card shadow" >
           <div class="card-header">
@@ -17,4 +21,5 @@
           </div>
         </div>
       </div>
+    </div>
     </div>

@@ -1,6 +1,8 @@
+<div [ngStyle]="{'background': 'linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147))'}">
+
 <div class="container">
   <!-- navbar section -->
-<nav class="navbar  navbar-expand-md navbar-expand-lg navbar-light bg-light">
+<nav class="navbar  navbar-expand-md navbar-expand-lg navbar-light ">
   <div class="container-fluid">
       <div class="navbar-nav mx-auto">
         <form (ngSubmit)="search()" class="d-flex " role="search">
@@ -13,7 +15,7 @@
 
         </select>
 
-        <button class=" btn btn-outline-success" type="submit">Search Books</button>
+        <button class=" btn btn-outline-danger" type="submit">Search Books</button>
       </form>
       </div>
     </div>
@@ -39,3 +41,4 @@
           </div>
         </div>
     </div>  
+</div>

@@ -1,1 +1,53 @@
-<p>dashboard works!</p>
+<div [ngStyle]="{'background': 'linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147))'}">
+<div class="container">
+    <!-- heading -->
+    <div class="mt-2 mb-4 p-5 bg-success text-white rounded text-center">
+        <h1>Welcome {{Name}}</h1>
+        </div>
+    <!-- Books waiting to be issued -->
+    <div class="row">
+        <div class="line mt-5"></div> <!--Black Line-->
+        <div class="text-center mt-4 mb-3">
+            <a routerLink="/Member/submittedbooks">
+                <h3 class="fw-bold text-primary maintitle">Books Waiting To Be Issued</h3>
+            </a>
+        </div>
+        <!-- Image Loop -->
+        <div class="row">
+            <div class="col-lg-2 col-sm-6 col-md-6 mb-2 d-flex" *ngFor='let book of waitingbooks'>
+                <div class="card card border-danger clickcard">
+                    <img  class="card-img-top img-fluid" [src]="book.image" alt="Card image cap">
+
+                    <div class="card-body">
+                        <p class="card-title book-title"><span class="fw-bold text-success ">{{book.title}}</span></p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Books  issued -->
+    <div class="row">
+        <div class="line mt-5"></div> <!--Black Line-->
+        <div class="text-center mt-4 mb-3">
+            <a routerLink="/Member/issuedbooks">
+                <h3 class="fw-bold text-danger maintitle">Issued Books</h3>
+            </a>
+        </div>
+        <!-- Image Loop -->
+        <div class="row">
+            <div class="col-lg-2 col-sm-6 col-md-6 mb-2 d-flex" *ngFor='let book of issuedbooks'>
+                <div class="card border-success clickcard">
+                    <img  class="card-img-top img-fluid" [src]="book.image" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-title  book-title"><span class="fw-bold text-success">{{book.title}}</span></p> 
+                        <p class="card-text">Due Date: <br> <span class="fw-bold text-danger">{{book.dueDate}}</span></p>
+                        <p class="card-text">Remarks : <br> <span class="fw-bold text-danger">{{book.remarks}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
