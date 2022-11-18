@@ -55,9 +55,6 @@ export class ValidateService {
     if(Book.title == ""){
       return false;
     }
-    if(Book.author == ""){
-      return false;
-    }
     else{
       return true;
     }

@@ -4,11 +4,17 @@ import { Router } from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { BookreturndialogComponent } from 'src/app/dialogs/bookreturndialog/bookreturndialog.component';
+import { slideInOut } from 'src/app/animations/animation';
+import { fade } from 'src/app/animations/fade';
 
 @Component({
   selector: 'app-issued',
   templateUrl: './issued.component.html',
-  styleUrls: ['./issued.component.css']
+  styleUrls: ['./issued.component.css'],
+  animations: [
+    slideInOut,
+    fade
+  ]
 })
 export class IssuedComponent implements OnInit {
 

@@ -3,11 +3,17 @@ import { AuthService } from 'src/app/services/auth.service';
 import { BooksService } from 'src/app/services/books.service';
 import { Router } from '@angular/router';
 import { SearchService } from 'src/app/services/search.service';
+import { slideInOut } from 'src/app/animations/animation';
+import { fade } from 'src/app/animations/fade';
 
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
-  styleUrls: ['./books.component.css']
+  styleUrls: ['./books.component.css'],
+  animations: [
+    slideInOut,
+    fade
+  ]
 })
 export class BooksComponent implements OnInit {
   

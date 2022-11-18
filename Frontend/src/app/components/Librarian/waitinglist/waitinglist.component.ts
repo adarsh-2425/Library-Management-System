@@ -4,11 +4,17 @@ import { Router } from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import { IssuedialogComponent } from 'src/app/dialogs/issuedialog/issuedialog.component';
 import { ToastrService } from 'ngx-toastr';
+import { slideInOut } from 'src/app/animations/animation';
+import { fade } from 'src/app/animations/fade';
 
 @Component({
   selector: 'app-waitinglist',
   templateUrl: './waitinglist.component.html',
-  styleUrls: ['./waitinglist.component.css']
+  styleUrls: ['./waitinglist.component.css'],
+  animations: [
+    slideInOut,
+    fade
+  ]
 })
 export class WaitinglistComponent implements OnInit {
 

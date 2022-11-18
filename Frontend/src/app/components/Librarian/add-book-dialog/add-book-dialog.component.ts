@@ -37,21 +37,21 @@ export class AddBookDialogComponent implements OnInit {
     console.log(this.Book);
     
     if(!this.ValidateService.validateBook(this.Book)){
-      this.toastr.error('You did not write any stories!!');
+      this.toastr.error('No Books Added!!');
       return false;
     }
 
     this.BooksService.postBook(this.Book).subscribe(
         data =>{
           if(data.success){
-            this.toastr.success('Post is Successfully Published!');
+            this.toastr.success('Book is Successfully Added!');
             this.matDialog.close();
             this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
               this.router.navigate(['/books']);
           }); 
           }
           else{
-            this.toastr.error("Post Cannot be Published At The Moment. Try Again later!")
+            this.toastr.error("Book Cannot be Added At The Moment. Try Again later!")
           }
         }
       )

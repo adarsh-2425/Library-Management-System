@@ -5,10 +5,17 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import { RegisterDialogComponent } from 'src/app/dialogs/register-dialog/register-dialog.component';
+import { slideInOut } from 'src/app/animations/animation';
+import { fade } from 'src/app/animations/fade';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  animations: [
+    slideInOut,
+    fade
+  ]
 })
 export class LoginComponent implements OnInit {
   // Images

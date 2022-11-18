@@ -3,9 +3,10 @@
         <!-- heading -->
         <div class="mt-2 mb-4 p-5 bg-success text-white rounded text-center">
             <h1>Welcome {{Name}}</h1>
+            <p>Designation : {{Role}}</p>
             </div>
         <!-- Books waiting to be issued -->
-        <div class="row">
+        <div @slideInOut class="row">
             <div class="line mt-5"></div> <!--Black Line-->
             <div class="text-center mt-4 mb-3">
                 <a routerLink="/Librarian/waitinglist">
