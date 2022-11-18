@@ -17,6 +17,8 @@ npm start
 <br>
 
 Used 'Supervisor npm package' for automatically restarting server. <br>
+
+Database is deployed on MongoDB Atlas<br>
 ## Credentials for testing
 Admin Credentials:
 
@@ -47,6 +49,10 @@ Steps<br>
 
 1. Login as 'Admin'<br>
 2. On the 'Manage Users' section in dashboard, click 'Approve as Librarian' button for the corresponding user.<br>
+
+![Admin page](https://github.com/adarsh-2425/Library-Management-System/blob/f4809f6d54d47bfcb4b3741703689bd4e7ed6f05/Frontend/src/assets/images/admin.PNG)
+
+## Member will get an email when their book is issued
 
 ![Admin page](https://github.com/adarsh-2425/Library-Management-System/blob/f4809f6d54d47bfcb4b3741703689bd4e7ed6f05/Frontend/src/assets/images/admin.PNG)
 

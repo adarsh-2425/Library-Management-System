@@ -114,8 +114,8 @@ router.put('/issuebook',(req,res)=>{
     port: 465,
     secure: true, // true for 465, false for other ports
     auth: {
-      user: process.env.Email, // user
-      pass: process.env.Password // password
+      user: 'adarsh.lol2425@zohomail.in', // user
+      pass: '79%Gty7yz$cR' // password
     },
     tls:{
         rejectUnauthorized:false
@@ -164,8 +164,8 @@ router.put('/issuebook',(req,res)=>{
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-          user: process.env.Email, // user
-          pass: process.env.Password // password
+          user: 'adarsh.lol2425@zohomail.in', // user
+          pass: '79%Gty7yz$cR' // password
         },
         tls:{
             rejectUnauthorized:false
