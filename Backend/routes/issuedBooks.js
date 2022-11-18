@@ -124,7 +124,7 @@ router.put('/issuebook',(req,res)=>{
 
   // setup email data with unicode symbols
   let mailOptions = {
-    from: '"Librarian" <adarsh.lol2425@zohomail.in>', // sender address
+    from: '"Library of Kerala" <adarsh.lol2425@zohomail.in>', // sender address
     to: memberEmail, // list of receivers
     subject: "Book Issued by Librarian", // Subject line
     text: `Book "${title}" is Issued.\n
@@ -173,7 +173,7 @@ router.put('/issuebook',(req,res)=>{
       });
       
         let mailOptions = {
-            from: '"Librarian" <adarsh.lol2425@zohomail.in>', // sender address
+            from: '"Library of Kerala" <adarsh.lol2425@zohomail.in>', // sender address
             to: memberEmail, // list of receivers
             subject: "Due Date is Tomorrow", // Subject line
             text: `Return your Book Immediately`, // plain text body

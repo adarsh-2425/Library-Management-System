@@ -14,6 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { IssuedBooksService } from './services/issued-books.service';
 import { MemberissuedbooksComponent } from './components/Member/memberissuedbooks/memberissuedbooks.component';
 import { MembersubmittedbooksComponent } from './components/Member/membersubmittedbooks/membersubmittedbooks.component';
+import { AuthGuard } from './Guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -22,11 +23,10 @@ const routes: Routes = [
   {
     path : 'login', component: LoginComponent
   },
+
   {
-    path : 'admindashboard', component: DashboardAdminComponent,
-  },
-  {
-    path: 'managemember', component: ManageMemberComponent
+    path: 'managemember', component: ManageMemberComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'books', component: BooksComponent,
@@ -35,22 +35,28 @@ const routes: Routes = [
     path: 'books/viewbook', component: ViewbookComponent
   },
   {
-    path: 'Librarian/waitinglist', component: WaitinglistComponent
+    path: 'Librarian/waitinglist', component: WaitinglistComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path: 'Librarian/issued', component: IssuedComponent
+    path: 'Librarian/issued', component: IssuedComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path: 'Librarian/dashboard', component : LibrarianDashboardComponent
+    path: 'Librarian/dashboard', component : LibrarianDashboardComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path: 'Member/dashboard', component: MemberDashboardComponent
+    path: 'Member/dashboard', component: MemberDashboardComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path: 'Member/issuedbooks', component: MemberissuedbooksComponent
+    path: 'Member/issuedbooks', component: MemberissuedbooksComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path: 'Member/submittedbooks', component: MembersubmittedbooksComponent
+    path: 'Member/submittedbooks', component: MembersubmittedbooksComponent,
+    canActivate: [AuthGuard]
   }
 
 ];

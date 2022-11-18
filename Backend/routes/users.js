@@ -5,7 +5,8 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const bcrypt = require('bcryptjs');
-
+const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 
 //REGISTER
@@ -19,7 +20,7 @@ router.post('/create', (req,res,next)=>{
         username: req.body.username,
         password: req.body.password
     });
-    console.log(newUser.Approverole);
+
     User.addUser(newUser, (err,user)=>{
         console.log(newUser.Approverole);
         if(err){
@@ -32,6 +33,42 @@ router.post('/create', (req,res,next)=>{
             res.json({success: true, msg:'Member Registered. You can Login Now.' })
             }
     })
+
+    // Nodemailer stackoverflow
+    // https://stackoverflow.com/questions/71573382/what-type-of-email-should-i-use-for-nodemailer-to-not-get-blocked#:~:text=I%20used%20Zoho%20mail%20and,var%20transport%20%3D%20nodemailer.
+
+    // create reusable transporter object using the default SMTP transport
+  let transporter = nodemailer.createTransport({
+    host: "smtp.zoho.in", //mail.google.com
+    port: 465,
+    secure: true, // true for 465, false for other ports
+    auth: {
+      user: process.env.Email, 
+      pass: process.env.Password 
+    },
+    tls:{
+        rejectUnauthorized:false
+    }
+  });
+
+  // setup email data with unicode symbols
+  let mailOptions = {
+    from: '"Library of Kerala" <adarsh.lol2425@zohomail.in>', // sender address
+    to: newUser.email, // list of receivers
+    subject: "Account Created", // Subject line
+    text:  `Hello ${newUser.Name}.\n
+    Your Account is Succesfully created\n
+    Welcome to Library of Kerala` // plain text body
+  };
+
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.log(error);
+    }
+    console.log("Message sent: %s", info.messageId);
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+  });
 });
 
 //Show list of users

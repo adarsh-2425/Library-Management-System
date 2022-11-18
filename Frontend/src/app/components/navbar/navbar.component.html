@@ -11,13 +11,15 @@
         <div class="navbar-nav ms-auto "> 
         
             <!-- LOGIN -->
+            <a class="nav-link " data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="books" routerLinkActive="active" *ngIf="!authService.loggedIn()"  (click)="refreshBook()">Books</a>  
+
             <a class="nav-link  loginbutton text-danger btn btn-outline-primary rounded" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"  aria-current="page" routerLink="/login" *ngIf="!authService.loggedIn()"><strong>Sign in / Sign Up</strong></a>  
             
             <!-- COMMON ROUTES -->
             <a class="nav-link " data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="Member/dashboard" routerLinkActive="active" *ngIf="authService.Member()">Dashboard</a> 
             <a class="nav-link " data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="Librarian/dashboard" routerLinkActive="active" *ngIf="authService.Librarian()">Dashboard</a> 
 
-            <a class="nav-link " data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="books" routerLinkActive="active" *ngIf="authService.Librarian() || authService.Member()" (click)="refreshBook()">Books</a>  
+            <a class="nav-link " data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="books" routerLinkActive="active" *ngIf="authService.loggedIn()"  (click)="refreshBook()">Books</a>  
             
             <!-- ADMIN LINKS -->
             <a class="nav-link " data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="managemember" routerLinkActive="active"  *ngIf="authService.Admin()">Dashboard</a>  
