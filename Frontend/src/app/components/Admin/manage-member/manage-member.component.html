@@ -13,14 +13,12 @@
           <thead class="head">
             <tr>
               <th>Name</th>
-              <th>Role</th>
             </tr>
            
           </thead>
           <tbody>
               <tr *ngFor='let user of users'>              
                   <td>{{ user.Name}}</td>
-                  <td>{{ user.role }}</td>
                   <td>
                     <button class="btn btn-success custom-class"  style="cursor:pointer" (click)="promote(user)"  style="margin-left: 20px;">Approve as Librarian</button>
                     <button class="btn btn-danger custom-class"  style="cursor:pointer" (click)="deleteUser(user)" >Delete User</button>

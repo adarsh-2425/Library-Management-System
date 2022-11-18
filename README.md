@@ -1,13 +1,19 @@
 # Library Management System
 
-All Functional Requirements are implemented.
+<strong>All Functional Requirements are implemented.</strong>
 
 Frontend Source Code is in 'Frontend' Folder<br>
-Run 'ng serve'
+Run 
+```
+ng serve
+```
 <br>
 
 Backend Source Code is in 'Backend' Folder<br>
-Run 'npm start'
+Run
+ ```
+npm start
+ ```
 <br>
 
 Used 'Supervisor npm package' for automatically restarting server. <br>
@@ -39,7 +45,7 @@ Librarian will get an email, when his/her account is verified.<br>
 
 Steps<br>
 
-1. Login as '   '<br>
+1. Login as 'Admin'<br>
 2. On the 'Manage Users' section in dashboard, click 'Approve as Librarian' button for the corresponding user.<br>
 
 ![Admin page](https://github.com/adarsh-2425/Library-Management-System/blob/f4809f6d54d47bfcb4b3741703689bd4e7ed6f05/Frontend/src/assets/images/admin.PNG)
