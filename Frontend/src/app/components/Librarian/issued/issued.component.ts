@@ -44,4 +44,8 @@ export class IssuedComponent implements OnInit {
     .subscribe(() => this.ngOnInit());
   }
 
+  sendRemainder(user:any){
+
+  }
+
 }

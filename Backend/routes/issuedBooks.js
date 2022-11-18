@@ -208,6 +208,9 @@ router.get('/issued', (req,res)=>{
     })
 });
 
+//Remainder
+
+
 //Delete Returned Books from Issuedbooks DB
 router.delete('/delete/:id',(req,res)=>{
     id = req.params.id;
