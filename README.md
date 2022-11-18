@@ -54,7 +54,7 @@ Steps<br>
 
 ## Member will get an email when their book is issued
 
-![Admin page](https://github.com/adarsh-2425/Library-Management-System/blob/f4809f6d54d47bfcb4b3741703689bd4e7ed6f05/Frontend/src/assets/images/issued.PNG)
+![Email page](https://github.com/adarsh-2425/Library-Management-System/blob/d2d204c6c5cef035983f55845d0193e3b70ab0c9/Frontend/src/assets/images/issued.PNG)
 
 ## Implementaions of each day
 Day 1:
