@@ -19,7 +19,7 @@ npm start
 Used 'Supervisor npm package' for automatically restarting server. <br>
 
 Database is deployed on MongoDB Atlas<br>
-## Credentials for testing
+## Credentials for Easy Testing
 Admin Credentials:
 
 ```

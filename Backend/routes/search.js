@@ -27,6 +27,12 @@ router.post('/',  (req,res)=>{
             res.send(item)
         })
         break;
+        case 'publicationDate':
+            Book.find({'publicationDate':query})
+            .then((item)=>{
+            res.send(item)
+        })
+        break;
     }
     });
 
