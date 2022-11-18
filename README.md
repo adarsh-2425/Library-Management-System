@@ -1,3 +1,17 @@
+# Library Management System
+
+All Functional Requirements are implemented.
+
+## My Additions
+Librarian can signup just like member. But Admin must verify the account for it to get Librarian privileges. <br>
+Librarian will get an email, when his/her account is verified.<br>
+
+1. Login as Admin<br>
+2. On the 'Manage Users' section in dashboard, click 'Approve as Librarian' button for the corresponding user.<br>
+
+![Admin page](https://drive.google.com/file/d/1NVh54TNj_8Euz1A_ARYTzvRJ1WMzviEm/view?usp=sharing)
+
+## Implementaions of each day
 Day 1:
 Implemented flow for users to register and login
 
