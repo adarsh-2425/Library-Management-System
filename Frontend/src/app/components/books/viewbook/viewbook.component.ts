@@ -3,6 +3,7 @@ import { BooksService } from 'src/app/services/books.service';
 import { Router } from '@angular/router';
 import { IssuedBooksService } from 'src/app/services/issued-books.service';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-viewbook',
@@ -28,7 +29,8 @@ export class ViewbookComponent implements OnInit {
     private BooksService: BooksService,
     private router: Router,
     private IssuedBooksService: IssuedBooksService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    public authService: AuthService,
   ) { }
 
   ngOnInit(): void {

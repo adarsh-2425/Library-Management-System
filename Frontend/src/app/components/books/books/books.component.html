@@ -33,7 +33,6 @@
                   <p class="card-text ">{{book.author}} </p>
               </div>
        
-              <button class="btn btn-primary" *ngIf="authService.Librarian()"  style="cursor:pointer" > Update</button>
                     <button class="btn btn-danger" (click)="delete(book)" *ngIf="authService.Librarian()"  style="cursor:pointer" > Delete</button>
                   <div class="card-footer">
               </div>

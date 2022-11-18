@@ -8,7 +8,7 @@
             <img class="card-img-top img-fluid" [src]="Books.image" alt="">
           </div>
           <div class="card-body">
-            <form (ngSubmit)="takeBook(Books)">
+            <form *ngIf="authService.loggedIn()" (ngSubmit)="takeBook(Books)">
             <div class="text-center">
               <button type="submit" class="btn btn-lg btn-success  takebookbutton">Take This Book</button>
           </div>
