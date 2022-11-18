@@ -100,7 +100,9 @@ https://www.geeksforgeeks.org/mongoose-count-function/
 
 ## How to use scrollStrategy in MatDialog?
 
-use the <mat-dialog-content> tag
+use``` 
+<mat-dialog-content>
+``` 
 
 ## Image falling out of bootstrap card
 use 'img-fluid' class
