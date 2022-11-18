@@ -9,7 +9,7 @@ Librarian will get an email, when his/her account is verified.<br>
 1. Login as Admin<br>
 2. On the 'Manage Users' section in dashboard, click 'Approve as Librarian' button for the corresponding user.<br>
 
-![Admin page](https://drive.google.com/file/d/1NVh54TNj_8Euz1A_ARYTzvRJ1WMzviEm/view?usp=sharing)
+![Admin page](https://www.dropbox.com/s/l88qyo7i2oj8av3/admin.PNG?dl=0)
 
 ## Implementaions of each day
 Day 1:
