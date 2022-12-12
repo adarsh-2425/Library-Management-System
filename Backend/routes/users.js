@@ -43,8 +43,8 @@ router.post('/create', (req,res,next)=>{
     port: 465,
     secure: true, // true for 465, false for other ports
     auth: {
-      user: 'adarsh.lol2425@zohomail.in', 
-      pass: '79%Gty7yz$cR' 
+      user: 'process.env.Email', 
+      pass: 'process.env.Password' 
     },
     tls:{
         rejectUnauthorized:false
